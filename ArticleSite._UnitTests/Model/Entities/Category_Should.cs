@@ -32,7 +32,7 @@ namespace ArticleSite._UnitTests.Model.Entities
         [Test]
         public void Name_RegisterAModelErrorIfNameValueIsNull()
         {
-            var sut = new Category { Name = string.Empty };
+            var sut = new Category { Name = null };
 
             int errorCount = Mother.ValidateModel(sut).Count;
 
@@ -42,7 +42,7 @@ namespace ArticleSite._UnitTests.Model.Entities
         [Test]
         public void Name_GenerateTheCorrectErrorMessageIfNameValueIsNull()
         {
-            var sut = new Category { Name = string.Empty };
+            var sut = new Category { Name = null };
 
             IList<ValidationResult> result = Mother.ValidateModel(sut);
             string errorMessage = result[0].ErrorMessage;
