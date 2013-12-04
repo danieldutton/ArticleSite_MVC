@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ArticleSite.Model.Entities
@@ -17,7 +18,9 @@ namespace ArticleSite.Model.Entities
         public string Title { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Content is required")]
-        [StringLength(6000, ErrorMessage = "Title max 6000 characters")]
+        [StringLength(6000, ErrorMessage = "Content max 6000 characters")]
         public string Content { get; set; }
+
+        public List<Category> Categories { get; set; }
     }
 }
