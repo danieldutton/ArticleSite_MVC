@@ -1,0 +1,5 @@
+C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.DataAccess\bin\Debug\ArticleSite.DataAccess.dll
+C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.DataAccess\bin\Debug\ArticleSite.DataAccess.pdb
+C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.DataAccess\obj\Debug\ArticleSite.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.DataAccess\obj\Debug\ArticleSite.DataAccess.dll
+C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.DataAccess\obj\Debug\ArticleSite.DataAccess.pdb
