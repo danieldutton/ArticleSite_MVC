@@ -74,3 +74,10 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debu
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\obj\Debug\ArticleSite._UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\obj\Debug\ArticleSite._UnitTests.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\obj\Debug\ArticleSite._UnitTests.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.Web.Common.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\WebActivator.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.Web.Common.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.Web.Common.xml
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.xml
