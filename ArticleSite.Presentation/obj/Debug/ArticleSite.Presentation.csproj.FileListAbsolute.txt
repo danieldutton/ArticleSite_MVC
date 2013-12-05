@@ -180,3 +180,7 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Ni
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Ninject.Web.Mvc.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\System.Data.SqlServerCe.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Repository.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Model.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Repository.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Model.pdb

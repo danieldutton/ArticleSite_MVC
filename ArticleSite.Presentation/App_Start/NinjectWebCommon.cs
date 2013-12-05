@@ -1,3 +1,6 @@
+using ArticleSite.Repository;
+using ArticleSite.Repository.Interfaces;
+
 [assembly: WebActivator.PreApplicationStartMethod(typeof(ArticleSite.Presentation.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(ArticleSite.Presentation.App_Start.NinjectWebCommon), "Stop")]
 
@@ -53,6 +56,7 @@ namespace ArticleSite.Presentation.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IArticleRepository>().To<ArticleRepository>();
         }        
     }
 }

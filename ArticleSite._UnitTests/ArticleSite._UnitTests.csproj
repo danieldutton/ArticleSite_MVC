@@ -40,11 +40,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Entities\Article_Should.cs" />
@@ -64,6 +59,10 @@
     <ProjectReference Include="..\ArticleSite.Presentation\ArticleSite.Presentation.csproj">
       <Project>{13ad0e4b-037a-4612-898c-222d5704ee9b}</Project>
       <Name>ArticleSite.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArticleSite.Repository\ArticleSite.Repository.csproj">
+      <Project>{018BB750-0550-4C35-B6D1-BE8E31201098}</Project>
+      <Name>ArticleSite.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

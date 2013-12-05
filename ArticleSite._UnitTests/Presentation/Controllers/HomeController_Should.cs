@@ -1,4 +1,6 @@
 ﻿using ArticleSite.Presentation.Controllers;
+using ArticleSite.Repository.Interfaces;
+using Moq;
 using NUnit.Framework;
 using System.Web.Mvc;
 
@@ -10,7 +12,8 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         [Test]
         public void Index_ReturnTheCorrectView()
         {
-            var homeController = new HomeController();
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var homeController = new HomeController(fakeArticleRepository.Object);
 
             ViewResult vr = homeController.Index();
 
@@ -20,7 +23,8 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         [Test]
         public void About_ReturnTheCorrectView()
         {
-            var homeController = new HomeController();
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var homeController = new HomeController(fakeArticleRepository.Object);
 
             ViewResult vr = homeController.Index();
 
@@ -30,7 +34,8 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         [Test]
         public void Contact_ReturnTheCorrectView()
         {
-            var homeController = new HomeController();
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var homeController = new HomeController(fakeArticleRepository.Object);
 
             ViewResult vr = homeController.Index();
 
