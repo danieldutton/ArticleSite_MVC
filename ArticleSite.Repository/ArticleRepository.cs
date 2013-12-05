@@ -9,7 +9,12 @@ namespace ArticleSite.Repository
 {
     public class ArticleRepository : IArticleRepository
     {
-        private readonly ArticleDbContext _db = new ArticleDbContext();
+        private readonly IDbContext _db;
+
+        public ArticleRepository(IDbContext dbContext)
+        {
+            _db = dbContext;
+        }
 
         public List<Article> All { get { return _db.Articles.OrderByDescending(p => p.DatePublished).ToList(); } }
         
@@ -30,7 +35,10 @@ namespace ArticleSite.Repository
 
         public void Delete(Article entity)
         {
-            throw new NotImplementedException();
+            var post = All.SingleOrDefault(p => p.Id == entity.Id);
+            _db.Articles.Remove(post);
+
+            _db.SaveChanges();
         }
 
         public Article LatestArticle()

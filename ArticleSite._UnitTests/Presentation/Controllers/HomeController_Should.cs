@@ -17,9 +17,9 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
             var fakeArticleRepository = new Mock<IArticleRepository>();
             var homeController = new HomeController(fakeArticleRepository.Object);
 
-            ViewResult vr = homeController.Index();
+            ViewResult viewResult = homeController.Index();
 
-            Assert.AreEqual(string.Empty, vr.ViewName);
+            Assert.AreEqual(string.Empty, viewResult.ViewName);
         }
 
         [Test]
@@ -51,9 +51,9 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
             var fakeArticleRepository = new Mock<IArticleRepository>();
             var homeController = new HomeController(fakeArticleRepository.Object);
 
-            ViewResult vr = homeController.Index();
+            ViewResult viewResult = homeController.Index();
 
-            Assert.AreEqual(string.Empty, vr.ViewName);
+            Assert.AreEqual(string.Empty, viewResult.ViewName);
         }
 
         [Test]
@@ -62,9 +62,9 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
             var fakeArticleRepository = new Mock<IArticleRepository>();
             var homeController = new HomeController(fakeArticleRepository.Object);
 
-            ViewResult vr = homeController.Index();
+            ViewResult viewResult = homeController.Index();
 
-            Assert.AreEqual(string.Empty, vr.ViewName);
+            Assert.AreEqual(string.Empty, viewResult.ViewName);
         }
     }
 }
