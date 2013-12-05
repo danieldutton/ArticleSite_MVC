@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.IO;
+using System.Linq;
 
 namespace ArticleSite._IntegrationTests.Repository_DbContext
 {
@@ -72,10 +73,9 @@ namespace ArticleSite._IntegrationTests.Repository_DbContext
             var duplicateCategory = new Category {Name = "Category One"};
 
             _sut.Add(duplicateCategory);
-            Category newCategory = _sut.Find(12);
+            List<Category> categoryList = _sut.All.Where(x => x.Name.Contains("Category One")).ToList();
 
-            Assert.AreEqual(12, newCategory.Id);
-            Assert.AreEqual("New Category", newCategory.Name);           
+            Assert.AreEqual(1, categoryList.Count);           
         }
 
         [Test]

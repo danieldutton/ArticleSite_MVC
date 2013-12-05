@@ -25,11 +25,10 @@ namespace ArticleSite.Repository
 
         public void Add(Category entity)
         {
-            if (All.Any(x => x.Name.Equals(entity.Name)))
-            {
-                _db.Categories.Add(entity);
-                _db.SaveChanges();
-            }
+            if (All.Any(x => x.Name.Equals(entity.Name))) return;
+
+            _db.Categories.Add(entity);
+            _db.SaveChanges();
         }
 
         public void Update(Category entity)
