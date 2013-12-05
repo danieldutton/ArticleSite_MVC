@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using ArticleSite.Model.Entities;
+﻿using ArticleSite.Model.Entities;
 using ArticleSite.Presentation.Controllers;
 using ArticleSite.Repository.Interfaces;
 using Moq;
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace ArticleSite._UnitTests.Presentation.Controllers

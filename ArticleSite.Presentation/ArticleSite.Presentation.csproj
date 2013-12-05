@@ -327,6 +327,7 @@
     <Content Include="Views\Shared\_Articles.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Views\Shared\_LatestArticles.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

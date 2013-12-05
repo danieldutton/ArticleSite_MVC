@@ -1,6 +1,7 @@
 ﻿using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,17 +20,27 @@ namespace ArticleSite.Repository
 
         public void Add(Article entity)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Update(Article entity)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Delete(Article entity)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        public Article LatestArticle()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Article> LatestArticles(int count)
+        {
+            throw new NotImplementedException();
         }
     }
 }
