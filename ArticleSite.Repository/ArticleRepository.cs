@@ -37,9 +37,13 @@ namespace ArticleSite.Repository
         public void Delete(Article entity)
         {
             var post = All.SingleOrDefault(p => p.Id == entity.Id);
-            _db.Articles.Remove(post);
+            
+            if (post != null)
+            {
+                _db.Articles.Remove(post);
 
-            _db.SaveChanges();
+                _db.SaveChanges();    
+            }            
         }
 
         public Article LatestArticle()

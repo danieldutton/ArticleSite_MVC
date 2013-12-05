@@ -1,7 +1,6 @@
 ﻿using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,7 +20,7 @@ namespace ArticleSite.Repository
 
         public Category Find(int id)
         {
-            throw new NotImplementedException();
+            return _db.Categories.Find(id);
         }
 
         public void Add(Category entity)
@@ -29,18 +28,26 @@ namespace ArticleSite.Repository
             if (All.Any(x => x.Name.Equals(entity.Name)))
             {
                 _db.Categories.Add(entity);
-                _db.SaveChanges();    
-            }            
+                _db.SaveChanges();
+            }
         }
 
         public void Update(Category entity)
         {
-            throw new NotImplementedException();
+            _db.SetModified(entity);
+            _db.SaveChanges();
         }
 
         public void Delete(Category entity)
         {
-            throw new NotImplementedException();
+            var category = All.SingleOrDefault(c => c.Id == entity.Id);
+            
+            if (category != null)
+            {
+                _db.Categories.Remove(category);
+
+                _db.SaveChanges();    
+            }           
         }
     }
 }

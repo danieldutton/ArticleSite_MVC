@@ -83,9 +83,9 @@ namespace ArticleSite._IntegrationTests.Repository_DbContext
         {
             Article result = _sut.Find(3);
             _sut.Delete(result);
-            var res = _sut.Find(3);
+            Article deletedResult = _sut.Find(3);
 
-            Assert.IsTrue(res == null);   
+            Assert.IsTrue(deletedResult == null);   
         }
 
         [Test]
