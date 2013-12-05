@@ -20,7 +20,7 @@ namespace ArticleSite._IntegrationTests.Repository_DbContext
         private ArticleRepository _sut;
 
         [SetUp]
-        public void InitTest()
+        public void Init()
         {
             Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0", "",
                     string.Format("Data Source=\"{0}\";", DbFile));
@@ -65,6 +65,27 @@ namespace ArticleSite._IntegrationTests.Repository_DbContext
 
             Assert.AreEqual(11, newArticle.Id);
             Assert.AreEqual("New Title", newArticle.Title);
+        }
+
+        [Test]
+        public void Add_AddANewArticleToTheDatabaseWithANewAssociatedCategory()
+        {
+            var article = new Article { DatePublished = DateTime.Now, Title = "New Title", Content = "New Content", Categories = new List<Category>{new Category{Name = "Random"}}}; 
+  
+            _sut.Add(article);
+            Article newArticle = _sut.Find(11);
+
+            Assert.AreEqual("Random", newArticle.Categories[0].Name);
+        }
+
+        [Test]
+        public void Add_AddANewArticleToTheDatabaseWithWithoutDuplicatingAnExistingCategory()
+        {
+            //var article = new Article { DatePublished = DateTime.Now, Title = "New Title", Content = "New Content", Categories = new List<Category> { new Category { Name = "Category One" } } };
+
+            //_sut.Add(article);
+            
+            //var result = _sut.All.Count(c => c.Categories).Contains(new Category {Name = "Category One"}));            
         }
 
         [Test]

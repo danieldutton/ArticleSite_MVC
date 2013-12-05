@@ -10,12 +10,14 @@ namespace ArticleSite.Repository
     {
         private readonly IDbContext _db;
 
+        public List<Article> All { get { return _db.Articles.ToList(); } }
+
+
         public ArticleRepository(IDbContext dbContext)
         {
             _db = dbContext;
         }
 
-        public List<Article> All { get { return _db.Articles.ToList(); } }
         
         public Article Find(int id)
         {

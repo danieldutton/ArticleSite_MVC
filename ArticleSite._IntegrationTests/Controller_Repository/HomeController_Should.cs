@@ -13,8 +13,11 @@ namespace ArticleSite._IntegrationTests.Controller_Repository
     [TestFixture]
     public class HomeController_Should
     {
-        protected const string DbFile = "ArticleSite.DataAccess.ArticleDbContext";
-        protected ArticleDbContext DataContext;
+        private const string DbFile = "ArticleSite.DataAccess.ArticleDbContext";
+        
+        private ArticleDbContext _dataContext;
+
+        private HomeController _sut;
 
         [SetUp]
         public void InitTest()
@@ -23,30 +26,31 @@ namespace ArticleSite._IntegrationTests.Controller_Repository
                     string.Format("Data Source=\"{0}\";", DbFile));
             Database.SetInitializer(new DataInitialiser());
 
-            DataContext = new ArticleDbContext();
-            DataContext.Database.Initialize(true);
+            _dataContext = new ArticleDbContext();
+            _dataContext.Database.Initialize(true);
+            _sut = new HomeController(new ArticleRepository(_dataContext));
+
         }
 
         [Test]
-        public void All_ReturnsAllArticles()
+        public void ReturnTheCorrectCountOfArticles()
         {
-            var rep = new ArticleRepository(DataContext);
-            var hc = new HomeController(rep);
+            var result = _sut.Index().Model as List<Article>;
 
-            var result = hc.Index().Model as List<Article>;
-
-            Assert.AreEqual(5, result.Count);
+            Assert.AreEqual(10, result.Count);
         }
 
         [TearDown]
         public void TearDown()
         {
-            DataContext.Dispose();
+            _dataContext.Dispose();
 
             if (File.Exists(DbFile))
             {
                 File.Delete(DbFile);
             }
+
+            _sut = null;
         }
     }
 }
