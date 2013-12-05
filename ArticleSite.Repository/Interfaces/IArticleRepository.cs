@@ -8,5 +8,7 @@ namespace ArticleSite.Repository.Interfaces
         Article LatestArticle();
 
         List<Article> LatestArticles(int count);
+
+        List<Article> ArticlesByCategory(string category);
     }
 }

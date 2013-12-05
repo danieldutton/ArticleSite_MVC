@@ -1,20 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using ArticleSite.DataAccess;
+﻿using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Presentation.Controllers;
 using ArticleSite.Repository;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.IO;
 
 namespace ArticleSite._IntegrationTests.Controller_Repository
 {
     [TestFixture]
     public class HomeController_Should
     {
-
         protected const string DbFile = "ArticleSite.DataAccess.ArticleDbContext";
-        protected const string Password = "1234567890";
         protected ArticleDbContext DataContext;
 
         [SetUp]
@@ -29,7 +28,7 @@ namespace ArticleSite._IntegrationTests.Controller_Repository
         }
 
         [Test]
-        public void Foo()
+        public void All_ReturnsAllArticles()
         {
             var rep = new ArticleRepository(DataContext);
             var hc = new HomeController(rep);
@@ -37,6 +36,17 @@ namespace ArticleSite._IntegrationTests.Controller_Repository
             var result = hc.Index().Model as List<Article>;
 
             Assert.AreEqual(5, result.Count);
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            DataContext.Dispose();
+
+            if (File.Exists(DbFile))
+            {
+                File.Delete(DbFile);
+            }
         }
     }
 }

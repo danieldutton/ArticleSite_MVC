@@ -1,7 +1,6 @@
 ﻿using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,7 +15,7 @@ namespace ArticleSite.Repository
             _db = dbContext;
         }
 
-        public List<Article> All { get { return _db.Articles.OrderByDescending(p => p.DatePublished).ToList(); } }
+        public List<Article> All { get { return _db.Articles.ToList(); } }
         
         public Article Find(int id)
         {
@@ -25,12 +24,14 @@ namespace ArticleSite.Repository
 
         public void Add(Article entity)
         {
-            throw new NotImplementedException();
+            _db.Articles.Add(entity);
+            _db.SaveChanges();
         }
 
         public void Update(Article entity)
         {
-            throw new NotImplementedException();
+            _db.SetModified(entity);
+            _db.SaveChanges();
         }
 
         public void Delete(Article entity)
@@ -50,5 +51,12 @@ namespace ArticleSite.Repository
         {
             return All.OrderByDescending(x => x.DatePublished).Take(count).ToList();
         }
+
+        public List<Article> ArticlesByCategory(string category)
+        {
+            List<Article> articlesByCategory = _db.Articles.Where(a => a.Categories.Any(c => c.Name.Contains(category))).ToList();
+
+            return articlesByCategory;
+        } 
     }
 }
