@@ -333,6 +333,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ArticleSite.DataAccess\ArticleSite.DataAccess.csproj">
+      <Project>{6B12DBC6-AB9B-416E-B873-AF36BDD342AD}</Project>
+      <Name>ArticleSite.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ArticleSite.Repository\ArticleSite.Repository.csproj">
       <Project>{018BB750-0550-4C35-B6D1-BE8E31201098}</Project>
       <Name>ArticleSite.Repository</Name>

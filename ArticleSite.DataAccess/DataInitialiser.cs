@@ -5,9 +5,9 @@ using System.Data.Entity;
 
 namespace ArticleSite.DataAccess
 {
-    public class DataInitialiser : DropCreateDatabaseAlways<ArticleDbContent>
+    public class DataInitialiser : DropCreateDatabaseAlways<ArticleDbContext>
     {
-        protected override void Seed(ArticleDbContent context)
+        protected override void Seed(ArticleDbContext context)
         {
             var articles = new List<Article>
                 {

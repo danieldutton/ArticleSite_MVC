@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +48,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ArticleSite.DataAccess\ArticleSite.DataAccess.csproj">
+      <Project>{6b12dbc6-ab9b-416e-b873-af36bdd342ad}</Project>
+      <Name>ArticleSite.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ArticleSite.Model\ArticleSite.Model.csproj">
       <Project>{EE2A8C47-7FCB-4432-8BAF-1C75CD1CD8FC}</Project>
       <Name>ArticleSite.Model</Name>

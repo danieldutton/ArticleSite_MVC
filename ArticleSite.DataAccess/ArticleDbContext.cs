@@ -3,14 +3,14 @@ using System.Data.Entity;
 
 namespace ArticleSite.DataAccess
 {
-    public class ArticleDbContent : DbContext
+    public class ArticleDbContext : DbContext
     {
         public DbSet<Article> Articles { get; set; }
 
         public DbSet<Category> Categories { get; set; }
 
 
-        public ArticleDbContent() : base("ArticleDb")
+        public ArticleDbContext() : base("ArticleDb")
         {            
         }
 
