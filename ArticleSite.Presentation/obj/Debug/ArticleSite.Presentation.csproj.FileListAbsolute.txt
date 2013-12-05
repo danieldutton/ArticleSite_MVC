@@ -178,3 +178,5 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Ni
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Ninject.Web.Common.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Ninject.Web.Mvc.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Ninject.Web.Mvc.xml
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\System.Data.SqlServerCe.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\System.Data.SqlServerCe.Entity.dll

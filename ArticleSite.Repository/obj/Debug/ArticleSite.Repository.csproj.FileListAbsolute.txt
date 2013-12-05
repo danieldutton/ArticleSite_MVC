@@ -1,0 +1,5 @@
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Repository.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Repository.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.csprojResolveAssemblyReference.cache
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.pdb

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArticleSite.DataAccess
 {
-    public class DataInitialiser : DropCreateDatabaseAlways<>
+    public class DataInitialiser : DropCreateDatabaseAlways<ArticleDbContent>
     {
     }
 }
