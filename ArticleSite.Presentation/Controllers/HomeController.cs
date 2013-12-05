@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace ArticleSite.Presentation.Controllers
 {
@@ -18,7 +16,9 @@ namespace ArticleSite.Presentation.Controllers
 
         public ViewResult Index()
         {
-            return View();
+            List<Article> articles = _articleRepository.All;
+
+            return View(articles);
         }
 
         public ViewResult About()

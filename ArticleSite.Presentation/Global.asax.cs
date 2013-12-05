@@ -1,5 +1,6 @@
 ﻿using ArticleSite.DataAccess;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -18,6 +19,7 @@ namespace ArticleSite.Presentation
 
             //Database
             Database.SetInitializer(new DataInitialiser());
+            Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0");
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

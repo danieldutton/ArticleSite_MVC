@@ -11,14 +11,14 @@ namespace ArticleSite.Model.Entities
         [Required]
         public DateTime DatePublished { get; set; }
 
-        public DateTime DateEdited { get; set; }
+        public DateTime? DateEdited { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Title is required")]
-        [StringLength(100, ErrorMessage = "Title max 70 characters")]
+        [MaxLength(100, ErrorMessage = "Title max 70 characters")]
         public string Title { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Content is required")]
-        [StringLength(6000, ErrorMessage = "Content max 6000 characters")]
+        [MaxLength(6000, ErrorMessage = "Content max 6000 characters")]
         public string Content { get; set; }
 
         public List<Category> Categories { get; set; }
