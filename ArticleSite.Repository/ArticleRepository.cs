@@ -35,12 +35,12 @@ namespace ArticleSite.Repository
 
         public Article LatestArticle()
         {
-            throw new NotImplementedException();
+            return All.OrderByDescending(x => x.DatePublished).FirstOrDefault();
         }
 
         public List<Article> LatestArticles(int count)
         {
-            throw new NotImplementedException();
+            return All.OrderByDescending(x => x.DatePublished).Take(count).ToList();
         }
     }
 }
