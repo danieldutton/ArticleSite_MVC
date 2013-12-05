@@ -10,10 +10,6 @@ namespace ArticleSite.DataAccess
         public DbSet<Category> Categories { get; set; }
 
 
-        public ArticleDbContext() : base("ArticleDb")
-        {            
-        }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Article>()

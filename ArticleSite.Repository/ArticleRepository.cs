@@ -8,7 +8,7 @@ namespace ArticleSite.Repository
 {
     public class ArticleRepository : IArticleRepository
     {
-        private ArticleDbContext _db = new ArticleDbContext();
+        private readonly ArticleDbContext _db = new ArticleDbContext();
 
         public List<Article> All { get { return _db.Articles.OrderByDescending(p => p.DatePublished).ToList(); } }
         
