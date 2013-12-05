@@ -1,1 +1,8 @@
-﻿
+﻿@model IEnumerable<ArticleSite.Model.Entities.Article>
+
+@foreach (var article in Model)
+{
+    <p>@article.DatePublished</p>
+    <p>@article.Title</p>
+    <p>@article.Content</p>
+}
