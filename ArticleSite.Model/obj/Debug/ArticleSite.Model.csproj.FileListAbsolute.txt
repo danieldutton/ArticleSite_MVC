@@ -3,7 +3,3 @@ C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.Model\bin\Debug\Artic
 C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.Model\obj\Debug\ArticleSite.Model.csprojResolveAssemblyReference.cache
 C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.Model\obj\Debug\ArticleSite.Model.dll
 C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite.Model\obj\Debug\ArticleSite.Model.pdb
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Model\bin\Debug\ArticleSite.Model.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Model\bin\Debug\ArticleSite.Model.pdb
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Model\obj\Debug\ArticleSite.Model.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Model\obj\Debug\ArticleSite.Model.pdb

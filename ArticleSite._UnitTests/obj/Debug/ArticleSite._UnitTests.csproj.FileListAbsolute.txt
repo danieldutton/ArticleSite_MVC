@@ -49,9 +49,9 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debu
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Http.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\WebActivator.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.DataAccess.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\DotNetOpenAuth.AspNet.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.DataAccess.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Http.WebHost.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Newtonsoft.Json.dll
@@ -71,9 +71,9 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debu
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Http.xml
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.DataAccess.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Microsoft.Web.WebPages.OAuth.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\DotNetOpenAuth.AspNet.xml
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.DataAccess.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Http.WebHost.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Newtonsoft.Json.xml

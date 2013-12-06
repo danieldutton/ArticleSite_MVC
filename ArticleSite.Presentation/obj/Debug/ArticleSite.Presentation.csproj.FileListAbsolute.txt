@@ -87,6 +87,7 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Ar
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Presentation.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Antlr3.Runtime.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.DataAccess.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Model.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Repository.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\DotNetOpenAuth.AspNet.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\DotNetOpenAuth.Core.dll
@@ -122,8 +123,8 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\We
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\WebGrease.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\WebMatrix.Data.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\WebMatrix.WebData.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Model.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.DataAccess.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Model.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Repository.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\EntityFramework.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Ninject.pdb
@@ -155,7 +156,6 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Sy
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Microsoft.Data.Edm.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\Microsoft.Data.OData.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\System.Spatial.xml
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\ArticleSite.Model.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\de\Microsoft.Data.Edm.resources.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\es\Microsoft.Data.Edm.resources.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Presentation\bin\fr\Microsoft.Data.Edm.resources.dll
