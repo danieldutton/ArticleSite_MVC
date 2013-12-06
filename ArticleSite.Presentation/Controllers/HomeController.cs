@@ -11,9 +11,12 @@ namespace ArticleSite.Presentation.Controllers
         {
         }
 
-        public ViewResult Index()
+        public ActionResult Index()
         {
             List<Article> articles = ArticleRepository.All;
+
+            if (articles == null)
+                return HttpNotFound();
 
             return View(articles);
         }
