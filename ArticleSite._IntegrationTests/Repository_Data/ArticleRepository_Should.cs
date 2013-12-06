@@ -8,7 +8,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.IO;
 
-namespace ArticleSite._IntegrationTests.Repository_DbContext
+namespace ArticleSite._IntegrationTests.Repository_Data
 {
     [TestFixture]
     public class ArticleRepository_Should

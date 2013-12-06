@@ -8,7 +8,7 @@ using System.Data.Entity.Infrastructure;
 using System.IO;
 using System.Linq;
 
-namespace ArticleSite._IntegrationTests.Repository_DbContext
+namespace ArticleSite._IntegrationTests.Repository_Data
 {
     [TestFixture]
     public class CategoryRepository_Should

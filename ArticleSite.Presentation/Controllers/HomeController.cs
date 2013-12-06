@@ -5,18 +5,15 @@ using System.Web.Mvc;
 
 namespace ArticleSite.Presentation.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ApplicationController
     {
-        private readonly IArticleRepository _articleRepository;
-
-        public HomeController(IArticleRepository articleRepository)
+        public HomeController(IArticleRepository articleRepository) : base(articleRepository)
         {
-            _articleRepository = articleRepository;
         }
 
         public ViewResult Index()
         {
-            List<Article> articles = _articleRepository.All;
+            List<Article> articles = ArticleRepository.All;
 
             return View(articles);
         }

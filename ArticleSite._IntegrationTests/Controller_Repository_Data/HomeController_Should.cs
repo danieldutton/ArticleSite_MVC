@@ -8,7 +8,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.IO;
 
-namespace ArticleSite._IntegrationTests.Controller_Repository
+namespace ArticleSite._IntegrationTests.Controller_Repository_Data
 {
     [TestFixture]
     public class HomeController_Should
@@ -33,7 +33,15 @@ namespace ArticleSite._IntegrationTests.Controller_Repository
         }
 
         [Test]
-        public void ReturnTheCorrectCountOfArticles()
+        public void ReturnTheCorrectModelType()
+        {
+            var result = _sut.Index().Model as List<Article>;
+
+            Assert.IsInstanceOf(typeof(List<Article>), result);
+        }
+
+        [Test]
+        public void Index_ReturnTheCorrectCountOfArticles()
         {
             var result = _sut.Index().Model as List<Article>;
 
