@@ -24,7 +24,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Index_ReturnTheCorrectViewIfModelIsNotNull()
+        public void Index_ReturnTheCorrectViewIfArticleIsNotNull()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
             fakeArticleRepository.Setup(x => x.All).Returns(() => new List<Article>());           
@@ -36,7 +36,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Index_ReturnHttpNotFoundIfModelIsNull()
+        public void Index_ReturnHttpNotFoundIfArticleIsNull()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
             fakeArticleRepository.SetupGet(x => x.All).Returns(() => null);
@@ -61,7 +61,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Details_CallArticleRepositoryFindMethodExactlyOnce()
+        public void Details_CallArticleRepositoryFindMethodOnce()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
             var sut = new AdminController(fakeArticleRepository.Object);
@@ -72,31 +72,31 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Details_ReturnTheCorrectViewIfModelStateIsNotNull()
+        public void Details_ReturnTheCorrectViewIfArticleIsNotNull()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
-            fakeArticleRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(() => new Article());
+            fakeArticleRepository.Setup(x => x.Find(1)).Returns(() => new Article());
             var sut = new AdminController(fakeArticleRepository.Object);
 
-            var viewResult = sut.Details() as ViewResult;
+            var viewResult = sut.Details(1) as ViewResult;
 
             Assert.AreEqual(string.Empty, viewResult.ViewName);    
         }
 
         [Test]
-        public void Details_ReturnHttpNotFoundIfModelIsNull()
+        public void Details_ReturnHttpNotFoundIfArticleIsNull()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
-            fakeArticleRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(() => null);
+            fakeArticleRepository.Setup(x => x.Find(1)).Returns(() => null);
             var sut = new AdminController(fakeArticleRepository.Object);
 
-            var viewResult = sut.Details() as HttpNotFoundResult;
+            var viewResult = sut.Details(1) as HttpNotFoundResult;
 
             Assert.AreEqual(404, viewResult.StatusCode);    
         } 
 
         [Test]
-        public void Details_ReturnTheCorrectModelType()
+        public void Details_ReturnTheCorrectArticleType()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
             fakeArticleRepository.Setup(x => x.Find(1)).Returns(() => new Article());
@@ -120,7 +120,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Create_Post_ReturnTheCorrectViewIfModelStateIsInvalid()
+        public void Create_Post_ReturnTheCorrectViewIfArticleStateIsInvalid()
         {
             var invalidArticle = new Article {Content = "Test Content"};
 
@@ -133,9 +133,8 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
             Assert.AreEqual(string.Empty, viewResult.ViewName);
         }
 
-
         [Test]
-        public void Create_Post_IfArticleStateIsValidCallAddMethodOnce()
+        public void Create_Post_IfArticleStateIsValidCallArticleRepositoryAddMethodOnce()
         {
             var validArticle = new Article { DatePublished = DateTime.Now, Title = "Valid Title", Content = "Valid Content"};
             var fakeArticleRepository = new Mock<IArticleRepository>();
@@ -148,7 +147,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Create_Post_IfArticleStateIsValidRedirectToIndexView()
+        public void Create_Post_IfArticleStateIsValidRedirectToTheCorrectAction()
         {
             var validArticle = new Article { DatePublished = DateTime.Now, Title = "Valid Title", Content = "Valid Content" };
             var fakeArticleRepository = new Mock<IArticleRepository>();
@@ -171,13 +170,13 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Edit_Get_ReturnHttpNotFoundIfModelIsNull()
+        public void Edit_Get_ReturnHttpNotFoundIfArticleIsNull()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
-            fakeArticleRepository.Setup(x => x.Find(0)).Returns(() => null);
+            fakeArticleRepository.Setup(x => x.Find(1)).Returns(() => null);
             var sut = new AdminController(fakeArticleRepository.Object);
 
-            var viewResult = sut.Edit() as HttpNotFoundResult;
+            var viewResult = sut.Edit(1) as HttpNotFoundResult;
 
             Assert.AreEqual(404, viewResult.StatusCode);    
         }
@@ -195,7 +194,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Edit_Post_IfArticleStateIsValidCallUpdateMethodOnce()
+        public void Edit_Post_IfArticleStateIsValidCallArticleRepositoryUpdateMethodOnce()
         {
             var validArticle = new Article { DatePublished = DateTime.Now, Title = "Valid Title", Content = "Valid Content" };
             var fakeArticleRepository = new Mock<IArticleRepository>();
@@ -208,7 +207,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Edit_Post_IfArticleStateIsValidRedirectToIndexView()
+        public void Edit_Post_IfArticleStateIsValidRedirectToTheCorrectAction()
         {
             var validArticle = new Article { DatePublished = DateTime.Now, Title = "Valid Title", Content = "Valid Content" };
             var fakeArticleRepository = new Mock<IArticleRepository>();
@@ -220,7 +219,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void Edit_Post_IfArticleStateIsInvalidReturnTheCorrectView()
+        public void Edit_Post_ReturnTheCorrectViewIfArticleStateIsInvalid()
         {
             var invalidArticle = new Article { Content = "Test Content" };
             var fakeArticleRepository = new Mock<IArticleRepository>();
@@ -303,11 +302,10 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void DeleteConfirmed_IfModelStateIsNotNullRedirectToIndexActionAndReturnTheCorrectView()
+        public void DeleteConfirmed_IfArticleStateIsNotNullRedirectToTheCorrectAction()
         {           
             var fakeArticleRepository = new Mock<IArticleRepository>();
-            fakeArticleRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(new Article());
-
+            fakeArticleRepository.Setup(x => x.Find(1)).Returns(new Article());
             var sut = new AdminController(fakeArticleRepository.Object);
 
             var redirectResult = sut.DeleteConfirmed(1) as RedirectToRouteResult;
@@ -316,7 +314,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
-        public void DeleteConfirmed_IfModelStateIsNullRedirectToIndexActionAndReturnTheCorrectView()
+        public void DeleteConfirmed_IfArticleStateIsNullRedirectToTheCorrectAction()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
             fakeArticleRepository.Setup(x => x.Find(1)).Returns(() => null);
