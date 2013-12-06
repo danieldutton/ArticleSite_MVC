@@ -88,7 +88,9 @@ namespace ArticleSite.Presentation.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Article article = ArticleRepository.Find(id);
-            ArticleRepository.Delete(article);
+
+            if(article != null)
+                ArticleRepository.Delete(article);
 
             return RedirectToAction("Index");
         }

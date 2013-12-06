@@ -39,12 +39,14 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Entities\Article_Should.cs" />
     <Compile Include="Model\Entities\Category_Should.cs" />
     <Compile Include="Mother.cs" />
+    <Compile Include="Presentation\Controllers\AdminController_Should.cs" />
     <Compile Include="Presentation\Controllers\HomeController_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

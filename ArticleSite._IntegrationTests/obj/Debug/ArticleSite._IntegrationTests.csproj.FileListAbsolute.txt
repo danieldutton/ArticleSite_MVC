@@ -48,3 +48,5 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\o
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\obj\Debug\ArticleSite._IntegrationTests.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\obj\Debug\ArticleSite._IntegrationTests.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Moq.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Moq.xml

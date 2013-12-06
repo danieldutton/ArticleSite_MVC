@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace ArticleSite._UnitTests
 {
@@ -12,5 +14,18 @@ namespace ArticleSite._UnitTests
             Validator.TryValidateObject(model, ctx, validationResults, true);
             return validationResults;
         }
+
+        public static void ValidateViewModel<VM, C>(VM viewModelToValidate, C controller) where C : Controller
+        {
+            var validationContext = new ValidationContext(viewModelToValidate, null, null);
+            var validationResults = new List<ValidationResult>();
+            Validator.TryValidateObject(viewModelToValidate, validationContext, validationResults, true);
+            foreach (var validationResult in validationResults)
+            {
+                controller.ModelState.AddModelError(validationResult.MemberNames.First(), validationResult.ErrorMessage);
+            }
+        }
     }
+
+
 }
