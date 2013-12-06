@@ -4,11 +4,11 @@ using System.Data.Entity;
 
 namespace ArticleSite.DataAccess
 {
-    public class ArticleDbContext : DbContext, IDbContext
+    public class ArticleDbContext : DbContext
     {
-        public IDbSet<Article> Articles { get; set; }
+        public DbSet<Article> Articles { get; set; }
 
-        public IDbSet<Category> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         
 
         public void SetModified(object entity)
