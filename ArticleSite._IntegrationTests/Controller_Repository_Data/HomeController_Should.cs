@@ -1,4 +1,5 @@
-﻿using ArticleSite.DataAccess;
+﻿using System.Web.Mvc;
+using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Presentation.Controllers;
 using ArticleSite.Repository;
@@ -35,7 +36,8 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         [Test]
         public void ReturnTheCorrectModelType()
         {
-            var result = _sut.Index().Model as List<Article>;
+            var result = _sut.Index() as ViewResult;
+            var model = result.Model as List<Article>;
 
             Assert.IsInstanceOf(typeof(List<Article>), result);
         }
@@ -43,9 +45,10 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         [Test]
         public void Index_ReturnTheCorrectCountOfArticles()
         {
-            var result = _sut.Index().Model as List<Article>;
-
-            Assert.AreEqual(10, result.Count);
+            var result = _sut.Index() as ViewResult;
+            var model = result.Model as List<Article>;
+            
+            Assert.AreEqual(10, model.Count);
         }
 
         [TearDown]

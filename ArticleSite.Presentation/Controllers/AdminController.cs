@@ -14,6 +14,11 @@ namespace ArticleSite.Presentation.Controllers
 
         public ActionResult Index()
         {
+            var model = ArticleRepository.All;
+
+            if (model == null)
+                return HttpNotFound();
+
             return View(ArticleRepository.All);
         }
 
