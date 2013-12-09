@@ -1,36 +1,31 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    @Html.Partial("_Navigation")
-                </div>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="website keywords, website keywords" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+</head>
+<body>
+    <div id="main">
+        @Html.Partial("_Header")
+        
+        @Html.Partial("_SideBar")
+            <div id="content">
+                @RenderBody();                   
             </div>
-        </header>
-        <div id="body">
-            @RenderBody()
-
         </div>
-        <footer>
-            @Html.Partial("_Footer")
-        </footer>
+        @Html.Partial("_Footer")
+    
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
 </html>
