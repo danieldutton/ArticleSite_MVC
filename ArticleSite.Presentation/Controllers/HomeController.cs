@@ -7,8 +7,8 @@ namespace ArticleSite.Presentation.Controllers
 {
     public class HomeController : ApplicationController
     {
-        public HomeController(IArticleRepository articleRepository) 
-            : base(articleRepository)
+        public HomeController(IArticleRepository articleRepository, ICategoryRepository categoryRepository) 
+            : base(articleRepository, categoryRepository)
         {
         }
 
