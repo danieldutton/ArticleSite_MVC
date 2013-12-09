@@ -41,7 +41,7 @@ namespace ArticleSite.Repository
 
         public void Delete(Article entity)
         {
-            var post = All.SingleOrDefault(p => p.ArticleId == entity.ArticleId);
+            var post = All.SingleOrDefault(a => a.ArticleId == entity.ArticleId);
             
             if (post != null)
             {
@@ -53,12 +53,12 @@ namespace ArticleSite.Repository
 
         public Article LatestArticle()
         {
-            return All.OrderByDescending(x => x.DatePublished).FirstOrDefault();
+            return All.OrderByDescending(a => a.DatePublished).FirstOrDefault();
         }
 
         public List<Article> LatestArticles(int count)
         {
-            return All.OrderByDescending(x => x.DatePublished).Take(count).ToList();
+            return All.OrderByDescending(a => a.DatePublished).Take(count).ToList();
         }
 
         public List<Article> ArticlesByCategory(string category)
@@ -66,6 +66,17 @@ namespace ArticleSite.Repository
             List<Article> articlesByCategory = _db.Articles.Where(a => a.Categories.Any(c => c.Name.Contains(category))).ToList();
 
             return articlesByCategory;
-        } 
+        }
+
+        public IEnumerable<IGrouping<int, Article>> ArticlesGroupedByYear()
+        {
+            IEnumerable<IGrouping<int, Article>> groupedPosts = _db.Articles
+                                              .AsEnumerable()
+                                              .OrderByDescending(a => a.DatePublished)
+                                              .GroupBy(a => a.DatePublished.Year)
+                                              .OrderByDescending(p => p.Key)
+                                              .ToList();
+            return groupedPosts;
+        }
     }
 }

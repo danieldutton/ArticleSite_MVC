@@ -1,5 +1,6 @@
 ﻿using ArticleSite.Model.Entities;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ArticleSite.Repository.Interfaces
 {
@@ -10,5 +11,7 @@ namespace ArticleSite.Repository.Interfaces
         List<Article> LatestArticles(int count);
 
         List<Article> ArticlesByCategory(string category);
+
+        IEnumerable<IGrouping<int, Article>> ArticlesGroupedByYear();
     }
 }
