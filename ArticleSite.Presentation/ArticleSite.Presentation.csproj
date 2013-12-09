@@ -348,6 +348,7 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_SideBar.cshtml" />
     <Content Include="Views\Home\Archive.cshtml" />
+    <Content Include="Views\Home\ArticleDetails.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

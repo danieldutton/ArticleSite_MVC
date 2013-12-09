@@ -27,9 +27,24 @@ namespace ArticleSite.Presentation.Controllers
             return View();
         }
 
+        public ActionResult ArticleDetails(int id)
+        {
+            Article result = ArticleRepository.Find(id);
+
+            if (result == null)
+                return HttpNotFound();
+
+            return View(result);
+        }
+
         public ActionResult Archive()
         {
-            return View();
+            var result = ArticleRepository.ArticlesGroupedByYear();
+
+            if (result == null)
+                return HttpNotFound();
+
+            return View(result);
         }
 
         public ViewResult Contact()

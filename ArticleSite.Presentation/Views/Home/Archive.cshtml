@@ -1,5 +1,24 @@
-﻿@{
+﻿ @model IEnumerable<IGrouping<int, ArticleSite.Model.Entities.Article>>
+
+@{
     ViewBag.Title = "Archive";
 }
 
-<h2>Archive</h2>
+<h2 id="title">Archive</h2>
+<p/>
+<ul>
+    @foreach (var item in Model) {
+        
+        <h3 class="archive-year">@Html.DisplayFor(modelItem => item.Key)</h3>
+               
+        foreach (var i in item)
+        {  <li>
+               @Html.ActionLink(i.Title, "ArticleDetails", new {leaveComments = false, postId = i.ArticleId}, "Home")
+           </li>
+          <li>
+            <small>Posted: @i.DatePublished.ToLongDateString()</small>
+          </li>
+        }
+        <br/>   
+}
+</ul>
