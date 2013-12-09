@@ -4,6 +4,7 @@ using ArticleSite.Repository.Interfaces;
 using Moq;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace ArticleSite._UnitTests.Presentation.Controllers
@@ -26,6 +27,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         public void Index_ReturnTheCorrectView()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
+            fakeArticleRepository.SetupGet(x => x.All).Returns(new List<Article>());
             var homeController = new HomeController(fakeArticleRepository.Object);
 
             var viewResult = homeController.Index() as ViewResult;
@@ -49,7 +51,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         public void Index_ReturnTheCorrectModelType()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
-            fakeArticleRepository.Setup(x => x.All).Returns(() => new List<Article>());
+            fakeArticleRepository.SetupGet(x => x.All).Returns(() => new List<Article>());
             var homeController = new HomeController(fakeArticleRepository.Object);
 
             var viewResult = homeController.Index() as ViewResult;
@@ -64,9 +66,104 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
             var fakeArticleRepository = new Mock<IArticleRepository>();
             var homeController = new HomeController(fakeArticleRepository.Object);
 
-            var viewResult = homeController.Index() as ViewResult;
+            var viewResult = homeController.About() as ViewResult;
 
             Assert.AreEqual(string.Empty, viewResult.ViewName);
+        }
+
+        [Test]
+        public void ArticleDetails_CallArticleRepository_Find_ExactlyOnce()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            homeController.ArticleDetails(1);
+
+            fakeArticleRepository.Verify(x => x.Find(1), Times.Once());    
+        }
+
+        [Test]
+        public void ArticleDetails_ReturnTheCorrectView()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            fakeArticleRepository.Setup(x => x.Find(1)).Returns(() => new Article());
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            var viewResult = homeController.ArticleDetails(1) as ViewResult;
+
+            Assert.AreEqual(string.Empty, viewResult.ViewName);
+        }
+
+        [Test]
+        public void ArticleDetails_ReturnHttpNotFoundIfArticlesDataIsNull()
+        {
+            var fakeRepository = new Mock<IArticleRepository>();
+            fakeRepository.SetupGet(x => x.All).Returns(() => null);
+            var homeController = new HomeController(fakeRepository.Object);
+
+            var result = homeController.ArticleDetails(1) as HttpNotFoundResult;
+
+            Assert.AreEqual(404, result.StatusCode);
+        }
+
+        [Test]
+        public void ArticleDetails_ReturnTheCorrectModelType()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            fakeArticleRepository.Setup(x => x.Find(1)).Returns(() => new Article());
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            var viewResult = homeController.ArticleDetails(1) as ViewResult;
+            var model = viewResult.Model as Article;
+
+            Assert.IsInstanceOf<Article>(model);   
+        }
+
+        [Test]
+        public void Archive_CallArticleRepository_ArticlesGroupedByYear_ExactlyOnce()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            homeController.Archive();
+
+            fakeArticleRepository.Verify(x => x.ArticlesGroupedByYear(), Times.Once());
+        }
+
+        [Test]
+        public void Archive_ReturnHttpNotFoundIfArticlesDataIsNull()
+        {
+            var fakeRepository = new Mock<IArticleRepository>();
+            fakeRepository.Setup(x => x.ArticlesGroupedByYear()).Returns(()=> null);
+            var homeController = new HomeController(fakeRepository.Object);
+
+            var result = homeController.Archive() as HttpNotFoundResult;
+
+            Assert.AreEqual(404, result.StatusCode);
+        }
+
+        [Test]
+        public void Archive_ReturnTheCorrectView()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            var viewResult = homeController.Archive() as ViewResult;
+
+            Assert.AreEqual(string.Empty, viewResult.ViewName);
+        }
+
+        [Test]
+        public void Archive_ReturnTheCorrectModelType()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            fakeArticleRepository.Setup(x => x.Find(1)).Returns(() => new Article());
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            var viewResult = homeController.Archive() as ViewResult;
+            var model = viewResult.Model as IEnumerable<IGrouping<int, Article>>;
+
+            Assert.IsInstanceOf<IEnumerable<IGrouping<int, Article>>>(model); 
         }
 
         [Test]
@@ -75,7 +172,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
             var fakeArticleRepository = new Mock<IArticleRepository>();
             var homeController = new HomeController(fakeArticleRepository.Object);
 
-            var viewResult = homeController.Index() as ViewResult;
+            var viewResult = homeController.Contact() as ViewResult;
 
             Assert.AreEqual(string.Empty, viewResult.ViewName);
         }

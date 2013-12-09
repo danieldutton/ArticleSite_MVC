@@ -22,7 +22,7 @@ namespace ArticleSite.Presentation.Controllers
             return View(articles);
         }
 
-        public ViewResult About()
+        public ActionResult About()
         {
             return View();
         }
@@ -47,7 +47,7 @@ namespace ArticleSite.Presentation.Controllers
             return View(result);
         }
 
-        public ViewResult Contact()
+        public ActionResult Contact()
         {
             return View();
         }
