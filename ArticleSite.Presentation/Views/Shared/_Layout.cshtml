@@ -1,3 +1,9 @@
+@using ArticleSite.Presentation.ViewModels
+
+@{
+    var masterLayout = ViewBag.Layout;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +23,7 @@
     <div id="main">
         @Html.Partial("_Header")
         
-        @Html.Partial("_SideBar")
+        @Html.Partial("_SideBar", (MasterPageViewModel)masterLayout)
             <div id="content">
                 @RenderBody()                   
             </div>

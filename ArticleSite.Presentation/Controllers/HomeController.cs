@@ -27,7 +27,7 @@ namespace ArticleSite.Presentation.Controllers
             return View();
         }
 
-        public ActionResult ArticleDetails(int id)
+        public ActionResult ArticleDetails(int id = 0)
         {
             Article result = ArticleRepository.Find(id);
 

@@ -3,6 +3,6 @@
 @foreach (var article in Model)
 {
     <p>@article.DatePublished.ToLongDateString()</p>
-    <p>@article.Title</p>
+    <h2>@article.Title</h2>
     <p>@article.Content</p>
 }
