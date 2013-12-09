@@ -5,6 +5,6 @@ namespace ArticleSite.Repository.Interfaces
 {
     public interface ICategoryRepository : IEntityRepository<Category>
     {
-        List<Category> CategoriesByNameDescending(int count);
+        List<Category> CategoriesByNameAscending(int count);
     }
 }

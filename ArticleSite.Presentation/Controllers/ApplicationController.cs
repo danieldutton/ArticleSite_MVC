@@ -27,7 +27,7 @@ namespace ArticleSite.Presentation.Controllers
             Article latestArticle = ArticleRepository.LatestArticle();
             latestArticle.Content = latestArticle.Content.Substring(0, 100);
 
-            List<Category> categories = CategoryRepository.CategoriesByNameDescending(10);
+            List<Category> categories = CategoryRepository.CategoriesByNameAscending(10);
 
             var masterLayout = new MasterPageViewModel {Article = latestArticle, Categories = categories}; 
 

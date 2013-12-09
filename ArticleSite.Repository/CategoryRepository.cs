@@ -47,12 +47,15 @@ namespace ArticleSite.Repository
             }           
         }
 
-        public List<Category> CategoriesByNameDescending(int count)
+        public List<Category> CategoriesByNameAscending(int count)
         {
+            int categoryNos = All.Count();
+
+            if (count > categoryNos) count = 5;
+
             List<Category> categories = All
-                                        .Distinct()
+                                        .OrderBy(c => c.Name)
                                         .Take(count)
-                                        .OrderByDescending(c => c.Name)
                                         .ToList();
 
             return categories;

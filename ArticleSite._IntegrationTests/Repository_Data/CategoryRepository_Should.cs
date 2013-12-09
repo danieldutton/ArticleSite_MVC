@@ -1,4 +1,5 @@
-﻿using ArticleSite.DataAccess;
+﻿using System;
+using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository;
 using NUnit.Framework;
@@ -98,6 +99,35 @@ namespace ArticleSite._IntegrationTests.Repository_Data
             var deletedResult = _sut.Find(3);
 
             Assert.IsTrue(deletedResult == null);
+        }
+
+        [Test]
+        public void CategoriesByNameAscending_ReturnTheCorrectCountOfRequestedCategories()
+        {
+            List<Category> categories = _sut.CategoriesByNameAscending(5);
+
+            Assert.AreEqual(5, categories.Count);
+        }
+
+        [Test]
+        public void CategoriesByNameAscending_IfCountParamIsGreaterThanCategoriesReturnADefaultOfFiveItems()
+        {
+            List<Category> categories = _sut.CategoriesByNameAscending(55);
+
+            Assert.AreEqual(5, categories.Count);
+        }
+
+        [Test]
+        public void CategoriesByNameAscending_ReturnTheCorrectSequenceOrderedByNameAscending()
+        {
+            IEnumerable<string> categoryNames = _sut.CategoriesByNameAscending(5).Select(c => c.Name);
+            
+            IEnumerable<string> expected = new List<string>
+                {
+                    "Category Eight", "Category Five", "Category Four", "Category Nine", "Category One"
+                };
+
+            Assert.IsTrue(expected.SequenceEqual(categoryNames));
         }
 
         [TearDown]
