@@ -2,7 +2,7 @@
 
 @foreach (var article in Model)
 {
-    <p>@article.DatePublished</p>
+    <p>@article.DatePublished.ToLongDateString()</p>
     <p>@article.Title</p>
     <p>@article.Content</p>
 }
