@@ -7,6 +7,8 @@ namespace ArticleSite.Presentation.ViewModels
     {
         public Article Article { get; set; }
 
+        public string ArticleSummary { get; set; }
+
         public List<Category> Categories { get; set; }
     }
 }

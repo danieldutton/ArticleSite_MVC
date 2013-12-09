@@ -8,7 +8,7 @@
         <h4>@Model.Article.Title</h4>
         <h5>@Model.Article.DatePublished.ToLongDateString()</h5>
         <p>
-            @Model.Article.Content<br />
+            @Model.ArticleSummary<br />
             @Html.ActionLink("Read More", "ArticleDetails", "Home", new {id  = @Model.Article.ArticleId}, null)
         </p>
     </div>
@@ -26,6 +26,7 @@
         </form>
     </div>
     <img class="paperclip" src="../../Images/paperclip.png" alt="paperclip" />
+    
     <div class="sidebar">
         <h3>Categories</h3>
         

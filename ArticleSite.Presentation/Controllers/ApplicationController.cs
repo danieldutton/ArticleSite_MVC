@@ -25,13 +25,18 @@ namespace ArticleSite.Presentation.Controllers
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             Article latestArticle = ArticleRepository.LatestArticle();
-            latestArticle.Content = latestArticle.Content.Substring(0, 100);
 
             List<Category> categories = CategoryRepository.CategoriesByNameAscending(10);
 
-            var masterLayout = new MasterPageViewModel {Article = latestArticle, Categories = categories}; 
+            var masterLayout = new MasterPageViewModel 
+            {
+                Article = latestArticle, 
+                ArticleSummary = latestArticle.Content.Substring(0, 100), 
+                Categories = categories
+            }; 
 
             ViewBag.Layout = masterLayout;
+            
             base.OnActionExecuted(filterContext);
         }
     }

@@ -1,8 +1,5 @@
-﻿@model IEnumerable<ArticleSite.Model.Entities.Article>
+﻿@model ArticleSite.Model.Entities.Article
 
-@foreach (var article in Model)
-{
-    <p>@article.DatePublished.ToLongDateString()</p>
-    <h2>@article.Title</h2>
-    <p>@article.Content</p>
-}
+    <p>@Model.DatePublished.ToLongDateString()</p>
+    <h2>@Model.Title</h2>
+    <p>@Model.Content</p>

@@ -13,12 +13,11 @@
                
         foreach (var i in item)
         {  <li>
-               @Html.ActionLink(i.Title, "ArticleDetails", new {leaveComments = false, postId = i.ArticleId}, "Home")
+               @Html.ActionLink(i.Title, "ArticleDetails", new {id = i.ArticleId}, "Home")
            </li>
           <li>
-            <small>Posted: @i.DatePublished.ToLongDateString()</small>
+            Posted: @i.DatePublished.ToLongDateString()
           </li>
-        }
-        <br/>   
+        }  
 }
 </ul>

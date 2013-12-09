@@ -14,12 +14,12 @@ namespace ArticleSite.Presentation.Controllers
 
         public ActionResult Index()
         {
-            List<Article> articles = ArticleRepository.All;
+            Article latestArticle = ArticleRepository.LatestArticle();
 
-            if (articles == null)
+            if (latestArticle == null)
                 return HttpNotFound();
 
-            return View(articles);
+            return View(latestArticle);
         }
 
         public ActionResult About()

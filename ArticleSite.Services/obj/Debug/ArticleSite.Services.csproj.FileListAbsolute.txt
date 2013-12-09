@@ -1,0 +1,4 @@
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Services\bin\Debug\ArticleSite.Services.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Services\bin\Debug\ArticleSite.Services.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Services\obj\Debug\ArticleSite.Services.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Services\obj\Debug\ArticleSite.Services.pdb
