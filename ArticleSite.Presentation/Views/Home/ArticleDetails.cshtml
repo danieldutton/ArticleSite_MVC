@@ -4,6 +4,6 @@
     ViewBag.Title = "ArticleDetails";
 }
 
-<h4>@Model.DatePublished</h4>
+<h4>@Model.DatePublished.ToLongDateString()</h4>
 <h1>@Model.Title</h1>
 <p>@Model.Content</p>

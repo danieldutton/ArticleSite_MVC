@@ -5,6 +5,7 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using ArticleSite.Repository.Interfaces;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
@@ -15,10 +16,15 @@ namespace ArticleSite.Presentation.Controllers
 {
     [Authorize]
     [InitializeSimpleMembership]
-    public class AccountController : Controller
+    public class AccountController : ApplicationController
     {
         //
         // GET: /Account/Login
+
+        public AccountController(IArticleRepository articleRepository) 
+            : base(articleRepository)
+        {
+        }
 
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)

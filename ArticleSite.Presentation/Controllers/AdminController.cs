@@ -4,9 +4,9 @@ using System.Web.Mvc;
 
 namespace ArticleSite.Presentation.Controllers
 {
+    [Authorize]
     public class AdminController : ApplicationController
     {
-
         public AdminController(IArticleRepository articleRepository) 
             : base(articleRepository)
         {
