@@ -120,6 +120,54 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         }
 
         [Test]
+        public void ArticleSummary_CallArticleRepository_ArticlesByCategory_ExactlyOnce()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            homeController.ArticleSummary(It.IsAny<string>());
+
+            fakeArticleRepository.Verify(x => x.ArticlesByCategory(It.IsAny<string>()), Times.Once());
+        }
+
+        [Test]
+        public void ArticleSummary_ReturnTheCorrectView()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            fakeArticleRepository.Setup(x => x.ArticlesByCategory(It.IsAny<string>())).Returns(() => new List<Article>());
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            var viewResult = homeController.ArticleSummary(It.IsAny<string>()) as ViewResult;
+
+            Assert.AreEqual(string.Empty, viewResult.ViewName);
+        }
+
+        [Test]
+        public void ArticleSummary_ReturnHttpNotFoundIfArticlesByCategoryDataIsNull()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            fakeArticleRepository.Setup(x => x.ArticlesByCategory(It.IsAny<string>())).Returns(() => null);
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            var result = homeController.ArticleSummary(It.IsAny<string>()) as HttpNotFoundResult;
+
+            Assert.AreEqual(404, result.StatusCode);
+        }
+
+        [Test]
+        public void ArticleSummary_ReturnTheCorrectModelType()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            fakeArticleRepository.Setup(x => x.ArticlesByCategory(It.IsAny<string>())).Returns(() => new List<Article>());
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            var viewResult = homeController.ArticleSummary(It.IsAny<string>()) as ViewResult;
+            var model = viewResult.Model as List<Article>;
+
+            Assert.IsInstanceOf<List<Article>>(model);
+        }
+
+        [Test]
         public void Archive_CallArticleRepository_ArticlesGroupedByYear_ExactlyOnce()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
