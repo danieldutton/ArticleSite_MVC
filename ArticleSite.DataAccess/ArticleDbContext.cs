@@ -12,8 +12,7 @@ namespace ArticleSite.DataAccess
         public IDbSet<Category> Categories { get; set; }
 
         public ArticleDbContext() : base("ArticleDb")
-        {
-            
+        {           
         }
 
         public void SetModified(object entity)
@@ -24,14 +23,9 @@ namespace ArticleSite.DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Article>()
-                        .HasMany(j => j.Categories)
-                        .WithMany(j => j.Articles)
-                        .Map(mc =>
-                            {
-                                mc.ToTable("AtricleCategory");
-                                mc.MapLeftKey("ArticleId");
-                                mc.MapRightKey("CategoryId");
-                            });
+                         .HasMany(j => j.Categories)
+                         .WithMany(j => j.Articles)
+                         .Map(x => x.ToTable("ArticleCategory"));
 
             base.OnModelCreating(modelBuilder);
         }
