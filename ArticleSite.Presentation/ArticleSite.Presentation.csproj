@@ -347,6 +347,7 @@
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_SideBar.cshtml" />
+    <Content Include="Views\Home\Archive.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

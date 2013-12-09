@@ -27,6 +27,11 @@ namespace ArticleSite.Presentation.Controllers
             return View();
         }
 
+        public ActionResult Archive()
+        {
+            return View();
+        }
+
         public ViewResult Contact()
         {
             return View();
