@@ -348,6 +348,7 @@
     <Content Include="Views\Home\Archive.cshtml" />
     <Content Include="Views\Home\ArticleDetails.cshtml" />
     <Content Include="Views\Home\ArticleSummary.cshtml" />
+    <Content Include="Views\Shared\_ContactForm.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

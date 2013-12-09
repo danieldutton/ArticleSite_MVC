@@ -1,5 +1,4 @@
-﻿using System;
-using ArticleSite.DataAccess;
+﻿using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository;
 using NUnit.Framework;

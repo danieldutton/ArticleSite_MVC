@@ -1,4 +1,5 @@
-﻿using ArticleSite.DataAccess;
+﻿using System.Linq;
+using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository;
 using NUnit.Framework;
@@ -176,6 +177,14 @@ namespace ArticleSite._IntegrationTests.Repository_Data
             List<Article> result = _sut.ArticlesByCategory("Category Whatever");
 
             Assert.AreEqual(0, result.Count);
+        }
+
+        [Test]
+        public void ArticlesGroupedByYear_GroupByYearCorrectly()
+        {
+            IEnumerable<IGrouping<int, Article>> result = _sut.ArticlesGroupedByYear();
+
+            //To Do Test
         }
 
         [TearDown]
