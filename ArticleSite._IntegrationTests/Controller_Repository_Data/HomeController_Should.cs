@@ -25,7 +25,7 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         {
             Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0", "",
                     string.Format("Data Source=\"{0}\";", DbFile));
-            Database.SetInitializer(new DataInitialiser());
+            Database.SetInitializer(new ArticleDataInitialiser());
 
             _dataContext = new ArticleDbContext();
             _dataContext.Database.Initialize(true);

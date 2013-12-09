@@ -1,4 +1,5 @@
-﻿using ArticleSite.Model.Entities;
+﻿using ArticleSite.DataAccess.Interfaces;
+using ArticleSite.Model.Entities;
 using System.Data;
 using System.Data.Entity;
 
@@ -9,7 +10,11 @@ namespace ArticleSite.DataAccess
         public IDbSet<Article> Articles { get; set; }
 
         public IDbSet<Category> Categories { get; set; }
-        
+
+        public ArticleDbContext() : base("ArticleDb")
+        {
+            
+        }
 
         public void SetModified(object entity)
         {
@@ -19,9 +24,14 @@ namespace ArticleSite.DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Article>()
-                         .HasMany(j => j.Categories)
-                         .WithMany(j => j.Articles)
-                         .Map(x => x.ToTable("ArticleCategory"));
+                        .HasMany(j => j.Categories)
+                        .WithMany(j => j.Articles)
+                        .Map(mc =>
+                            {
+                                mc.ToTable("AtricleCategory");
+                                mc.MapLeftKey("ArticleId");
+                                mc.MapRightKey("CategoryId");
+                            });
 
             base.OnModelCreating(modelBuilder);
         }

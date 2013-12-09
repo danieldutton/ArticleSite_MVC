@@ -1,4 +1,4 @@
-﻿using ArticleSite.DataAccess;
+﻿using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System.Collections.Generic;
@@ -17,7 +17,6 @@ namespace ArticleSite.Repository
         {
             _db = dbContext;
         }
-
         
         public Article Find(int id)
         {
@@ -26,6 +25,9 @@ namespace ArticleSite.Repository
 
         public void Add(Article entity)
         {
+            if(entity.Categories != null)
+                entity.Categories.ForEach(c => _db.Categories.Attach(c));
+            
             _db.Articles.Add(entity);
             _db.SaveChanges();
         }
@@ -38,7 +40,7 @@ namespace ArticleSite.Repository
 
         public void Delete(Article entity)
         {
-            var post = All.SingleOrDefault(p => p.Id == entity.Id);
+            var post = All.SingleOrDefault(p => p.ArticleId == entity.ArticleId);
             
             if (post != null)
             {

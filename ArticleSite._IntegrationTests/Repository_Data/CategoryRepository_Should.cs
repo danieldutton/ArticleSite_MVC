@@ -24,7 +24,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         {
             Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0", "",
                     string.Format("Data Source=\"{0}\";", DbFile));
-            Database.SetInitializer(new DataInitialiser());
+            Database.SetInitializer(new ArticleDataInitialiser());
 
             _dataContext = new ArticleDbContext();
             _dataContext.Database.Initialize(true);
@@ -44,7 +44,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         {
             Category result = _sut.Find(3);
 
-            Assert.IsTrue(result.Id == 3);
+            Assert.IsTrue(result.CategoryId == 3);
         }
 
         [Test]
@@ -63,7 +63,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
             _sut.Add(category);
             Category newCategory = _sut.Find(12);
 
-            Assert.AreEqual(12, newCategory.Id);
+            Assert.AreEqual(12, newCategory.CategoryId);
             Assert.AreEqual("New Category", newCategory.Name);
         }
 

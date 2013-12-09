@@ -1,4 +1,5 @@
 using ArticleSite.DataAccess;
+using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Repository;
 using ArticleSite.Repository.Interfaces;
 

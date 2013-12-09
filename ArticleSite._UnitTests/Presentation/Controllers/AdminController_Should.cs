@@ -324,6 +324,5 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
 
             Assert.AreEqual("Index", redirectResult.RouteValues["action"]); 
         }
-
     }
 }

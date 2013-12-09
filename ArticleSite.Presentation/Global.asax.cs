@@ -18,7 +18,7 @@ namespace ArticleSite.Presentation
             AreaRegistration.RegisterAllAreas();
 
             //Database
-            Database.SetInitializer(new DataInitialiser());
+            Database.SetInitializer(new ArticleDataInitialiser());
             Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0");
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

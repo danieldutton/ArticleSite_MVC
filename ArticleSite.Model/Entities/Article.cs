@@ -6,7 +6,7 @@ namespace ArticleSite.Model.Entities
 {
     public class Article
     {
-        public int Id { get; set; }
+        public int ArticleId { get; set; }
 
         [Required]
         public DateTime DatePublished { get; set; }

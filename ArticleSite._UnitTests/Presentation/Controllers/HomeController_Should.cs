@@ -12,6 +12,17 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
     public class HomeController_Should
     {
         [Test]
+        public void Index_CallArticleRepository_All_ExactlyOnce()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var homeController = new HomeController(fakeArticleRepository.Object);
+
+            homeController.Index();
+
+            fakeArticleRepository.Verify(x => x.All, Times.Once());
+        }
+
+        [Test]
         public void Index_ReturnTheCorrectView()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
@@ -20,17 +31,6 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
             var viewResult = homeController.Index() as ViewResult;
 
             Assert.AreEqual(string.Empty, viewResult.ViewName);
-        }
-
-        [Test]
-        public void Index_CallArticleRepository_All_ExactlyOnce()
-        {
-            var fakeArticleRepository = new Mock<IArticleRepository>();
-            var homeController = new HomeController(fakeArticleRepository.Object);
-
-            homeController.Index();
-            
-            fakeArticleRepository.Verify(x => x.All, Times.Once());   
         }
 
         [Test]

@@ -24,7 +24,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         {
             Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0", "",
                     string.Format("Data Source=\"{0}\";", DbFile));
-            Database.SetInitializer(new DataInitialiser());
+            Database.SetInitializer(new ArticleDataInitialiser());
 
             _dataContext = new ArticleDbContext();
             _dataContext.Database.Initialize(true);
@@ -44,7 +44,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         {
             Article result = _sut.Find(3);
 
-            Assert.IsTrue(result.Id == 3);
+            Assert.IsTrue(result.ArticleId == 3);
         }
 
         [Test]
@@ -63,14 +63,20 @@ namespace ArticleSite._IntegrationTests.Repository_Data
             _sut.Add(article);
             Article newArticle = _sut.Find(11);
 
-            Assert.AreEqual(11, newArticle.Id);
+            Assert.AreEqual(11, newArticle.ArticleId);
             Assert.AreEqual("New Title", newArticle.Title);
         }
 
         [Test]
         public void Add_AddANewArticleToTheDatabaseWithANewAssociatedCategory()
         {
-            var article = new Article { DatePublished = DateTime.Now, Title = "New Title", Content = "New Content", Categories = new List<Category>{new Category{Name = "Random"}}}; 
+            var article = new Article
+                {
+                    DatePublished = DateTime.Now, 
+                    Title = "New Title", 
+                    Content = "New Content", 
+                    Categories = new List<Category>{ new Category { Name = "Random" } }
+                }; 
   
             _sut.Add(article);
             Article newArticle = _sut.Find(11);
@@ -79,13 +85,21 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         }
 
         [Test]
-        public void Add_AddANewArticleToTheDatabaseWithWithoutDuplicatingAnExistingCategory()
+        public void Add_AddANewArticleToTheDatabaseWithoutDuplicatingAnExistingCategory()
         {
-            //var article = new Article { DatePublished = DateTime.Now, Title = "New Title", Content = "New Content", Categories = new List<Category> { new Category { Name = "Category One" } } };
+            var article = new Article
+                {
+                    DatePublished = DateTime.Now, 
+                    Title = "New Title", 
+                    Content = "New Content", 
+                    Categories = new List<Category> { new Category { CategoryId = 1, Name = "Category Onez" } }
+                };
 
-            //_sut.Add(article);
-            
-            //var result = _sut.All.Count(c => c.Categories).Contains(new Category {Name = "Category One"}));            
+            _sut.Add(article);
+
+            List<Article> result = _sut.ArticlesByCategory("Category One");
+
+            Assert.AreEqual(1, result.Count);
         }
 
         [Test]

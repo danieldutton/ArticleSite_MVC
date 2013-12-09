@@ -1,4 +1,4 @@
-﻿using ArticleSite.DataAccess;
+﻿using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System.Collections.Generic;
@@ -25,8 +25,6 @@ namespace ArticleSite.Repository
 
         public void Add(Category entity)
         {
-            if (All.Any(x => x.Name.Equals(entity.Name))) return;
-
             _db.Categories.Add(entity);
             _db.SaveChanges();
         }
@@ -39,7 +37,7 @@ namespace ArticleSite.Repository
 
         public void Delete(Category entity)
         {
-            var category = All.SingleOrDefault(c => c.Id == entity.Id);
+            var category = All.SingleOrDefault(c => c.CategoryId == entity.CategoryId);
             
             if (category != null)
             {

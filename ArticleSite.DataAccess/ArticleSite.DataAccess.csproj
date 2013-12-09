@@ -39,8 +39,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleDbContext.cs" />
-    <Compile Include="DataInitialiser.cs" />
-    <Compile Include="IDbContext.cs" />
+    <Compile Include="ArticleDataInitialiser.cs" />
+    <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

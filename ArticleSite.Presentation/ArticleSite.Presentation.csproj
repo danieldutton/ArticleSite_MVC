@@ -213,9 +213,15 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ArticlesPartialViewModel.cs" />
+    <Compile Include="ViewModels\HomeIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ArticleSite.DataAccess.ArticleDbContext.sdf" />
+    <Content Include="App_Data\ArticleDb.sdf" />
+    <Content Include="App_Data\aspnet-ArticleSite.Presentation-20131204204034.mdf" />
+    <Content Include="App_Data\aspnet-ArticleSite.Presentation-20131204204034_log.ldf">
+      <DependentUpon>aspnet-ArticleSite.Presentation-20131204204034.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

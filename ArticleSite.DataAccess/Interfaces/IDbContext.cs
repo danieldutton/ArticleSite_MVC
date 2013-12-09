@@ -1,7 +1,7 @@
 ﻿using ArticleSite.Model.Entities;
 using System.Data.Entity;
 
-namespace ArticleSite.DataAccess
+namespace ArticleSite.DataAccess.Interfaces
 {
     public interface IDbContext
     {

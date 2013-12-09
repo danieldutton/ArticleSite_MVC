@@ -4,6 +4,6 @@ namespace ArticleSite.Repository.Interfaces
 {
     public interface ICategoryRepository : IEntityRepository<Category>
     {
-
+       
     }
 }
