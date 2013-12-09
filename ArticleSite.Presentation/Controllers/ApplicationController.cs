@@ -1,6 +1,8 @@
 ﻿using ArticleSite.Model.Entities;
 using ArticleSite.Presentation.ViewModels;
 using ArticleSite.Repository.Interfaces;
+using Ninject;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace ArticleSite.Presentation.Controllers
@@ -9,18 +11,15 @@ namespace ArticleSite.Presentation.Controllers
     {
         private readonly IArticleRepository _articleRepository;
 
-        private readonly ICategoryRepository _categoryRepository;
-
         public IArticleRepository ArticleRepository { get { return _articleRepository; } }
 
-        public ICategoryRepository CategoryRepository { get { return _categoryRepository; } }
+        [Inject]
+        public ICategoryRepository CategoryRepository { get; set; }
 
 
-        protected ApplicationController(IArticleRepository articleRepository, 
-                                        ICategoryRepository categoryRepository)
+        protected ApplicationController(IArticleRepository articleRepository)
         {
             _articleRepository = articleRepository;
-            _categoryRepository = categoryRepository;
         }
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
@@ -28,8 +27,9 @@ namespace ArticleSite.Presentation.Controllers
             Article latestArticle = ArticleRepository.LatestArticle();
             latestArticle.Content = latestArticle.Content.Substring(0, 100);
 
-            
-            var masterLayout = new MasterPageViewModel {Article = latestArticle}; 
+            List<Category> categories = CategoryRepository.CategoriesByNameDescending(10);
+
+            var masterLayout = new MasterPageViewModel {Article = latestArticle, Categories = categories}; 
 
             ViewBag.Layout = masterLayout;
             base.OnActionExecuted(filterContext);

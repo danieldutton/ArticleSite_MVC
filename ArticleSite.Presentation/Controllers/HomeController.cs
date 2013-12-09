@@ -7,8 +7,8 @@ namespace ArticleSite.Presentation.Controllers
 {
     public class HomeController : ApplicationController
     {
-        public HomeController(IArticleRepository articleRepository, ICategoryRepository categoryRepository) 
-            : base(articleRepository, categoryRepository)
+        public HomeController(IArticleRepository articleRepository) 
+            : base(articleRepository)
         {
         }
 
@@ -35,6 +35,16 @@ namespace ArticleSite.Presentation.Controllers
                 return HttpNotFound();
 
             return View(result);
+        }
+
+        public ActionResult ArticleSummary(string searchTerm = "default")
+        {
+            List<Article> articlesByCategory = ArticleRepository.ArticlesByCategory(searchTerm);
+
+            if (articlesByCategory == null)
+                return HttpNotFound();
+
+            return View(articlesByCategory);
         }
 
         public ActionResult Archive()

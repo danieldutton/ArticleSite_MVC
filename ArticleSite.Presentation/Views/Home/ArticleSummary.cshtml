@@ -1,0 +1,14 @@
+﻿@model IEnumerable<ArticleSite.Model.Entities.Article>
+
+@{
+    ViewBag.Title = "ArticleSummary";
+}
+
+<h2>ArticleSummary</h2>
+
+@foreach (var article in Model)
+{
+    <h4>@article.DatePublished</h4>
+    <h4>@article.Title</h4>
+    <p>@article.Content</p>
+}

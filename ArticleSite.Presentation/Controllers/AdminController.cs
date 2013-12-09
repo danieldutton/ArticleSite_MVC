@@ -7,8 +7,8 @@ namespace ArticleSite.Presentation.Controllers
     public class AdminController : ApplicationController
     {
 
-        public AdminController(IArticleRepository articleRepository, ICategoryRepository categoryRepository) 
-            : base(articleRepository, categoryRepository)
+        public AdminController(IArticleRepository articleRepository) 
+            : base(articleRepository)
         {
         }
 

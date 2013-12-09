@@ -46,5 +46,16 @@ namespace ArticleSite.Repository
                 _db.SaveChanges();    
             }           
         }
+
+        public List<Category> CategoriesByNameDescending(int count)
+        {
+            List<Category> categories = All
+                                        .Distinct()
+                                        .Take(count)
+                                        .OrderByDescending(c => c.Name)
+                                        .ToList();
+
+            return categories;
+        }
     }
 }

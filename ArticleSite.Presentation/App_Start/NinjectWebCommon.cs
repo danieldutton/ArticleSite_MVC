@@ -58,8 +58,13 @@ namespace ArticleSite.Presentation.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IArticleRepository>().To<ArticleRepository>();
             kernel.Bind<IDbContext>().To<ArticleDbContext>();
+
+            //Articles
+            kernel.Bind<IArticleRepository>().To<ArticleRepository>();
+            
+            //Categories
+            kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
         }        
     }
 }
