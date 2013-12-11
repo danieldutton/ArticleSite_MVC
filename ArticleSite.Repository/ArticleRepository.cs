@@ -25,9 +25,11 @@ namespace ArticleSite.Repository
 
         public void Add(Article entity)
         {
-            //check if any category in the entity is in the categories table
+            var categories = entity.Categories; 
             
-            //if it is then assign it the category id
+            if(categories != null && categories.Count > 0)
+
+            categories.ForEach(x => _db.Categories.Attach(x));    
 
             _db.Articles.Add(entity);
             _db.SaveChanges();

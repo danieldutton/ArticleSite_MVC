@@ -34,15 +34,6 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         }
 
         [Test]
-        public void ReturnTheCorrectModelType()
-        {
-            var result = _sut.Index() as ViewResult;
-            var model = result.Model as List<Article>;
-
-            Assert.IsInstanceOf(typeof(List<Article>), result);
-        }
-
-        [Test]
         public void Index_ReturnTheCorrectCountOfArticles()
         {
             var result = _sut.Index() as ViewResult;

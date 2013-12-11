@@ -13,21 +13,21 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
     public class HomeController_Should
     {
         [Test]
-        public void Index_CallArticleRepository_All_ExactlyOnce()
+        public void Index_CallArticleRepository_LatestArticle_ExactlyOnce()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
             var homeController = new HomeController(fakeArticleRepository.Object);
 
             homeController.Index();
 
-            fakeArticleRepository.Verify(x => x.All, Times.Once());
+            fakeArticleRepository.Verify(x => x.LatestArticle(), Times.Once());
         }
 
         [Test]
         public void Index_ReturnTheCorrectView()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
-            fakeArticleRepository.SetupGet(x => x.All).Returns(new List<Article>());
+            fakeArticleRepository.Setup(x => x.LatestArticle()).Returns(new Article());
             var homeController = new HomeController(fakeArticleRepository.Object);
 
             var viewResult = homeController.Index() as ViewResult;
@@ -39,7 +39,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         public void Index_ReturnHttpNotFoundIfArticlesDataIsNull()
         {
             var fakeRepository = new Mock<IArticleRepository>();
-            fakeRepository.SetupGet(x => x.All).Returns(()=> null);
+            fakeRepository.Setup(x => x.LatestArticle()).Returns(()=> null);
             var homeController = new HomeController(fakeRepository.Object);
 
             var result = homeController.Index() as HttpNotFoundResult;
@@ -51,13 +51,13 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         public void Index_ReturnTheCorrectModelType()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
-            fakeArticleRepository.SetupGet(x => x.All).Returns(() => new List<Article>());
+            fakeArticleRepository.Setup(x => x.LatestArticle()).Returns(() => new Article());
             var homeController = new HomeController(fakeArticleRepository.Object);
 
             var viewResult = homeController.Index() as ViewResult;
-            var model = viewResult.Model as List<Article>;
+            var model = viewResult.Model as Article;
 
-            CollectionAssert.AllItemsAreInstancesOfType(model, typeof (List<Article>));
+            Assert.IsInstanceOf<Article>(model);
         }
 
         [Test]
