@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.1.1311.0615\lib\net40\Moq.dll</HintPath>
     </Reference>
@@ -49,11 +53,16 @@
     <Compile Include="Presentation\Controllers\AdminController_Should.cs" />
     <Compile Include="Presentation\Controllers\HomeController_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CategoryRepository_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ArticleSite.DataAccess\ArticleSite.DataAccess.csproj">
+      <Project>{6B12DBC6-AB9B-416E-B873-AF36BDD342AD}</Project>
+      <Name>ArticleSite.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ArticleSite.Model\ArticleSite.Model.csproj">
       <Project>{EE2A8C47-7FCB-4432-8BAF-1C75CD1CD8FC}</Project>
       <Name>ArticleSite.Model</Name>

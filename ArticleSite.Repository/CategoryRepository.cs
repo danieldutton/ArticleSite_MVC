@@ -1,4 +1,5 @@
-﻿using ArticleSite.DataAccess.Interfaces;
+﻿using System;
+using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System.Collections.Generic;
@@ -25,12 +26,16 @@ namespace ArticleSite.Repository
 
         public void Add(Category entity)
         {
+            var category = _db.Categories.FirstOrDefault(c => c.Name.Equals(entity.Name, StringComparison.InvariantCultureIgnoreCase));
+            if (category != null) return;
+
             _db.Categories.Add(entity);
             _db.SaveChanges();
         }
 
         public void Update(Category entity)
         {
+            //ToDo prevent updating to duplicate category
             _db.SetModified(entity);
             _db.SaveChanges();
         }

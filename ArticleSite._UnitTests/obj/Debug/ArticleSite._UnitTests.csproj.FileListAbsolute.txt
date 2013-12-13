@@ -43,7 +43,6 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debu
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.Repository.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Moq.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\nunit.framework.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\EntityFramework.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Optimization.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.Web.Common.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.dll
