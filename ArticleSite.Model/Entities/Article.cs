@@ -18,8 +18,10 @@ namespace ArticleSite.Model.Entities
         public string Title { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Content is required")]
-        [MaxLength(6000, ErrorMessage = "Content max 6000 characters")]
+        [MaxLength(4000, ErrorMessage = "Content max 6000 characters")]
         public string Content { get; set; }
+
+        public int CategoryId { get; set; }
 
         public List<Category> Categories { get; set; }
     }

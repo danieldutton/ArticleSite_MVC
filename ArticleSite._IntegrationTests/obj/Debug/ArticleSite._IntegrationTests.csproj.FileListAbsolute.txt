@@ -6,8 +6,11 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\b
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\ArticleSite.Presentation.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\ArticleSite.Repository.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\EntityFramework.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Moq.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\nunit.framework.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\System.Data.SqlServerCe.Entity.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\System.Web.Optimization.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Ninject.Web.Common.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Ninject.dll
@@ -28,6 +31,9 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\b
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\ArticleSite.Presentation.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\ArticleSite.Repository.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\EntityFramework.xml
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Moq.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\nunit.framework.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Ninject.Web.Common.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Ninject.Web.Common.xml
@@ -47,6 +53,3 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\b
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\obj\Debug\ArticleSite._IntegrationTests.csprojResolveAssemblyReference.cache
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\obj\Debug\ArticleSite._IntegrationTests.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\obj\Debug\ArticleSite._IntegrationTests.pdb
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Moq.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._IntegrationTests\bin\Debug\Moq.xml

@@ -38,6 +38,7 @@ C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite._UnitTests\bin\Debug\
 C:\Users\Danny\Desktop\ArticleSite\ArticleSite\ArticleSite._UnitTests\bin\Debug\ArticleSite.Model.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite._UnitTests.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite._UnitTests.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.DataAccess.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.Model.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.Presentation.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.Repository.dll
@@ -48,7 +49,6 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debu
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Http.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\WebActivator.dll
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.DataAccess.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\DotNetOpenAuth.AspNet.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Http.WebHost.dll
@@ -59,18 +59,17 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debu
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\DotNetOpenAuth.OAuth.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\DotNetOpenAuth.OpenId.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.DataAccess.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.Model.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.Presentation.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.Repository.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Moq.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\nunit.framework.xml
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\EntityFramework.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.Web.Common.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.Web.Common.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Ninject.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Http.xml
-C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite.DataAccess.pdb
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\Microsoft.Web.WebPages.OAuth.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\DotNetOpenAuth.AspNet.xml
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\System.Web.Http.WebHost.xml

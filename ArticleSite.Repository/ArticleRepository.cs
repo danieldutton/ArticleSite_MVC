@@ -24,12 +24,7 @@ namespace ArticleSite.Repository
         }
 
         public void Add(Article entity)
-        {
-            var categories = entity.Categories; 
-            
-            if(categories != null && categories.Count > 0)
-
-            categories.ForEach(x => _db.Categories.Attach(x));    
+        {    
 
             _db.Articles.Add(entity);
             _db.SaveChanges();

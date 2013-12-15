@@ -34,8 +34,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Moq">
-      <HintPath>..\packages\Moq.4.1.1311.0615\lib\net40\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.2.1312.1416, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Moq.4.2.1312.1416\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
@@ -53,7 +54,6 @@
     <Compile Include="Presentation\Controllers\AdminController_Should.cs" />
     <Compile Include="Presentation\Controllers\HomeController_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\CategoryRepository_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

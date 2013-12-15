@@ -1,7 +1,7 @@
-﻿using System;
-using ArticleSite.DataAccess.Interfaces;
+﻿using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
