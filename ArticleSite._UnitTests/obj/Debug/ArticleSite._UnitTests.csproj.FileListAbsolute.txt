@@ -83,3 +83,8 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debu
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\obj\Debug\ArticleSite._UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\obj\Debug\ArticleSite._UnitTests.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\obj\Debug\ArticleSite._UnitTests.pdb
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\ArticleSite._UnitTests.dll.config
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\EntityFramework.xml
+C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite._UnitTests\bin\Debug\EntityFramework.SqlServer.xml

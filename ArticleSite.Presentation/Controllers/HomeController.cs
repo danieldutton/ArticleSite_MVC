@@ -1,4 +1,5 @@
-﻿using ArticleSite.Model.Entities;
+﻿using System.Linq;
+using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -41,7 +42,7 @@ namespace ArticleSite.Presentation.Controllers
         {
             List<Article> articlesByCategory = ArticleRepository.ArticlesByCategory(searchTerm);
 
-            if (articlesByCategory == null)
+            if (articlesByCategory.Count == 0)
                 return HttpNotFound();
 
             return View(articlesByCategory);
@@ -49,7 +50,7 @@ namespace ArticleSite.Presentation.Controllers
 
         public ActionResult Archive()
         {
-            var result = ArticleRepository.ArticlesGroupedByYear();
+            IEnumerable<IGrouping<int, Article>> result = ArticleRepository.ArticlesGroupedByYear();
 
             if (result == null)
                 return HttpNotFound();

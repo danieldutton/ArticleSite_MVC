@@ -35,7 +35,9 @@ namespace ArticleSite.Repository
 
         public void Update(Category entity)
         {
-            //ToDo prevent updating to duplicate category
+            var category = _db.Categories.FirstOrDefault(c => c.Name.Equals(entity.Name, StringComparison.InvariantCultureIgnoreCase));
+            if (category != null) return;
+
             _db.SetModified(entity);
             _db.SaveChanges();
         }

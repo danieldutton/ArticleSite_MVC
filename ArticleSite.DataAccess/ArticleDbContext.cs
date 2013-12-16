@@ -1,15 +1,14 @@
 ﻿using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Model.Entities;
-using System.Data;
 using System.Data.Entity;
 
 namespace ArticleSite.DataAccess
 {
     public class ArticleDbContext : DbContext, IDbContext
     {
-        public IDbSet<Article> Articles { get; set; }
+        public virtual IDbSet<Article> Articles { get; set; }
 
-        public IDbSet<Category> Categories { get; set; }
+        public virtual IDbSet<Category> Categories { get; set; }
 
         public ArticleDbContext() : base("ArticleDb")
         {           
