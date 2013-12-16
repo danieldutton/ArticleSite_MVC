@@ -36,7 +36,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         {
             List<Category> result = _sut.All;
 
-            Assert.AreEqual(10, result.Count);
+            Assert.AreEqual(11, result.Count);
         }
 
         [Test]

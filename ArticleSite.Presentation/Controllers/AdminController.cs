@@ -1,4 +1,5 @@
-﻿using ArticleSite.Model.Entities;
+﻿using System.Collections.Generic;
+using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System.Web.Mvc;
 
@@ -14,7 +15,7 @@ namespace ArticleSite.Presentation.Controllers
 
         public ActionResult Index()
         {
-            var model = ArticleRepository.All;
+            List<Article> model = ArticleRepository.All;
 
             if (model == null)
                 return HttpNotFound();

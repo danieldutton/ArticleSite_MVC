@@ -37,6 +37,8 @@
   <ItemGroup>
     <Compile Include="Entities\Article.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\NewsLetter.cs" />
+    <Compile Include="Entities\Subscriber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

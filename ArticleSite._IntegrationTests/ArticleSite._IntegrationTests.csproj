@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Controller_Repository_Data\AdminController_Should.cs" />
     <Compile Include="Controller_Repository_Data\HomeController_Should.cs" />
+    <Compile Include="Mother.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository_Data\ArticleRepository_Should.cs" />
     <Compile Include="Repository_Data\CategoryRepository_Should.cs" />

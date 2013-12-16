@@ -26,6 +26,4 @@ namespace ArticleSite._UnitTests
             }
         }
     }
-
-
 }

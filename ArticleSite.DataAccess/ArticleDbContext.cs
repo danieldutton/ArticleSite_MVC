@@ -10,6 +10,11 @@ namespace ArticleSite.DataAccess
 
         public virtual IDbSet<Category> Categories { get; set; }
 
+        public virtual IDbSet<Subscriber> Subscribers { get; set; }
+
+        public virtual IDbSet<NewsLetter> NewsLetters { get; set; }
+
+
         public ArticleDbContext() : base("ArticleDb")
         {           
         }
