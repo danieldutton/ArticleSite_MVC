@@ -1,4 +1,5 @@
-﻿using ArticleSite.DataAccess.Interfaces;
+﻿using System.Data.Entity.ModelConfiguration.Conventions;
+using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Model.Entities;
 using System.Data.Entity;
 
@@ -26,6 +27,8 @@ namespace ArticleSite.DataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
             modelBuilder.Entity<Article>()
                          .HasMany(j => j.Categories)
                          .WithMany(j => j.Articles)
