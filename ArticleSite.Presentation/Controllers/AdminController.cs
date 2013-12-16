@@ -98,7 +98,8 @@ namespace ArticleSite.Presentation.Controllers
 
         public ActionResult CreateNewsletter()
         {
-            return View();
+            return View(new NewsLetter());
         }
+
     }
 }
