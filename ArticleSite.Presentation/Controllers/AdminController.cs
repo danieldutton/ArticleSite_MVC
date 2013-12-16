@@ -95,5 +95,10 @@ namespace ArticleSite.Presentation.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult CreateNewsletter()
+        {
+            return View();
+        }
     }
 }

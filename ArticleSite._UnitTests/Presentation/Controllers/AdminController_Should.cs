@@ -324,5 +324,16 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
 
             Assert.AreEqual("Index", redirectResult.RouteValues["action"]); 
         }
+
+        [Test]
+        public void CreateNewsLetter_Get_ReturnTheCorrectView()
+        {
+            var fakeArticleRepository = new Mock<IArticleRepository>();
+            var sut = new AdminController(fakeArticleRepository.Object);
+
+            var viewResult = sut.CreateNewsletter() as ViewResult;
+
+            Assert.AreEqual(string.Empty, viewResult.ViewName);
+        }
     }
 }
