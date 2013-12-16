@@ -35,10 +35,10 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         }
 
         [Test]
-        public void Index_ReturnTheModelOfTypeListOfArticle()
+        public void Index_ReturnAModelOfTypeListOfArticle()
         {
-            var vieResult = _sut.Index() as ViewResult;
-            var model = vieResult.Model as List<Article>;
+            var viewResult = _sut.Index() as ViewResult;
+            var model = viewResult.Model as List<Article>;
 
             Assert.IsInstanceOf<List<Article>>(model);
         }
@@ -53,7 +53,7 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         }
 
         [Test]
-        public void Details_ReturnTheModelOfTypeArticle()
+        public void Details_ReturnAModelOfTypeArticle()
         {
             var viewResult = _sut.Details(1) as ViewResult;
             var model = viewResult.Model as Article;
@@ -81,33 +81,34 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         [Test]
         public void Create_CreateANewArticleIfModelStateIsValid()
         {
-            var article = new Article
+            var newArticle = new Article
                 {
                     DatePublished = new DateTime(2013, 2, 4),
                     Title = "Title 1",
                     Content = "Content 1"
                 };
            
-            _sut.Create(article);
+            _sut.Create(newArticle);
             
             var viewResult = _sut.Details(11) as ViewResult;
-            var a = viewResult.Model as Article;
+            var article = viewResult.Model as Article;
 
-            Assert.AreEqual(11, a.ArticleId);
-            Assert.AreEqual("Title 1", a.Title);
+            Assert.AreEqual(11, article.ArticleId);
+            Assert.AreEqual("Title 1", article.Title);
         }
 
         [Test]
         public void Create_FailToCreateANewArticleIfModelStateIsInvalid()
         {
-            var article = new Article
+            var newArticle = new Article
             {
                 DatePublished = new DateTime(2013, 2, 4),
                 Title = null,
                 Content = null
             };
+            
             _sut.ModelState.AddModelError("Title", "Required");
-            _sut.Create(article);
+            _sut.Create(newArticle);
 
             var viewResult = _sut.ArticleRepository.All;
             
@@ -115,21 +116,21 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         }
 
         [Test]
-        public void Create_ReturnTheCorrectModelTypeOfArticle()
+        public void Create_ReturnAModelTypeOfArticle()
         {
-            var article = new Article
+            var newArticle = new Article
             {
                 DatePublished = new DateTime(2013, 2, 4),
                 Title = "Title 1",
                 Content = "Content 1"
             };
 
-            _sut.Create(article);
+            _sut.Create(newArticle);
 
             var viewResult = _sut.Details(11) as ViewResult;
-            var a = viewResult.Model as Article;
+            var article = viewResult.Model as Article;
 
-            Assert.IsInstanceOf<Article>(a);    
+            Assert.IsInstanceOf<Article>(article);    
         }
 
         [Test]
@@ -152,21 +153,21 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         public void Edit_FailToEditANewArticleIfModelStateIsInvalid()
         {
             var viewResultBefore = _sut.Details(1) as ViewResult;
-            var art = viewResultBefore.Model as Article;
-            art.Title = null;
+            var article = viewResultBefore.Model as Article;
+
             _sut.ModelState.AddModelError("Title", "Required");
 
-            _sut.Edit(art);
+            _sut.Edit(article);
 
             var viewResultAfter = _sut.Details(1) as ViewResult;
             var a = viewResultAfter.Model as Article;
 
             Assert.AreEqual(1, a.ArticleId);
-            Assert.AreEqual("Title 1", a.Title );
+            Assert.AreEqual("Article Title 1", a.Title );
         }
 
         [Test]
-        public void Edit_ReturnTheCorrectModelTypeOfArticle()
+        public void Edit_ReturnAModelTypeOfArticle()
         {
             var viewResultBefore = _sut.Details(1) as ViewResult;
             var art = viewResultBefore.Model as Article;
@@ -181,7 +182,7 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         }
 
         [Test]
-        public void Delete_ReturnTheCorrectModelTypeOfArticle()
+        public void Delete_ReturnAModelTypeOfArticle()
         {
             var viewResult =_sut.Delete(1) as ViewResult;
             var model = viewResult.Model as Article;
@@ -200,25 +201,20 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
         [Test]
         public void DeleteConfirmed_SuccessfullyDeleteAnExistingArticle()
         {
-            var viewResult = _sut.DeleteConfirmed(2) as ViewResult;
+            _sut.DeleteConfirmed(2);
 
-            var article = viewResult.Model as Article;
+            List<Article> articles = _sut.ArticleRepository.All;
 
-            var counter = _sut.Details(2);
-            var articles = _sut.ArticleRepository.All;
-            Assert.IsNull(counter);
             Assert.AreEqual(9, articles.Count);
         }
 
         [Test]
         public void DeleteConfirmed_PerformNoDeleteOperationIfArticleCannotBeFound()
         {
-            var viewResult = _sut.DeleteConfirmed(25) as ViewResult;
+            _sut.DeleteConfirmed(25);
 
-            var article = viewResult.Model as Article;
             var articles = _sut.ArticleRepository.All;
 
-            Assert.IsNull(article);
             Assert.AreEqual(10, articles.Count);
         }
 

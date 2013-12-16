@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using ArticleSite.DataAccess;
+﻿using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository;
 using NUnit.Framework;
@@ -8,6 +7,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.IO;
+using System.Linq;
 
 namespace ArticleSite._IntegrationTests.Repository_Data
 {
@@ -93,7 +93,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
                     DatePublished = DateTime.Now, 
                     Title = "New Title", 
                     Content = "New Content", 
-                    Categories = new List<Category> { new Category { CategoryId = 1, Name = "Category Onez" } }
+                    Categories = new List<Category> { new Category { CategoryId = 1, Name = "Category One" } }
                 };
 
             _sut.Add(article);
@@ -158,7 +158,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         [Test]
         public void ArticlesByCategory_ReturnArticleWhereOneSingleCategoryExists()
         {
-            List<Article> result = _sut.ArticlesByCategory("Category One");
+            List<Article> result = _sut.ArticlesByCategory("Category Three");
 
             Assert.AreEqual(1, result.Count);
         }
@@ -166,7 +166,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         [Test]
         public void ArticlesByCategory_ReturnArticlesWhereManyPostsHoldTheSameCategory()
         {
-            List<Article> result = _sut.ArticlesByCategory("Category Five");
+            List<Article> result = _sut.ArticlesByCategory("Category One");
 
             Assert.AreEqual(3, result.Count);
         }

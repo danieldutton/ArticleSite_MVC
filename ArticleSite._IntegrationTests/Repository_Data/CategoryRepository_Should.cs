@@ -36,7 +36,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         {
             List<Category> result = _sut.All;
 
-            Assert.AreEqual(11, result.Count);
+            Assert.AreEqual(12, result.Count);
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         {
             Category result = _sut.Find(13);
 
-            Assert.IsTrue(result == null); 
+            Assert.IsNull(result); 
         }
 
         [Test]
@@ -61,20 +61,20 @@ namespace ArticleSite._IntegrationTests.Repository_Data
             var category = new Category { Name = "New Category" };
 
             _sut.Add(category);
-            Category newCategory = _sut.Find(11);
+            Category newCategory = _sut.Find(13);
 
-            Assert.AreEqual(11, newCategory.CategoryId);
+            Assert.AreEqual(13, newCategory.CategoryId);
             Assert.AreEqual("New Category", newCategory.Name);
         }
 
         [Test]
         public void Add_FailToInsertACategoryIfItAlreadyExistsByName()
         {
-            var duplicateCategory = new Category { Name = "Category One" };
+            var duplicateCategory = new Category { Name = "Category Two" };
 
             _sut.Add(duplicateCategory);
-            List<Category> categoryList = _sut.All.Where(x => x.Name.Contains("Category One")).ToList();
-
+            List<Category> categoryList = _sut.All.Where(x => x.Name.Contains("Category Two")).ToList();
+            
             Assert.AreEqual(1, categoryList.Count);          
         }
 

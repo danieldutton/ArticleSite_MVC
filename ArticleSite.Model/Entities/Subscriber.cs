@@ -9,12 +9,12 @@ namespace ArticleSite.Model.Entities
         [Required]
         public string Email { get; set; }
 
-        public bool CurrentlySubscribed { get; set; }
+        public bool IsSubscribed { get; set; }
 
 
         public Subscriber()
         {
-            CurrentlySubscribed = true;
+            IsSubscribed = true;
         }
     }
 }
