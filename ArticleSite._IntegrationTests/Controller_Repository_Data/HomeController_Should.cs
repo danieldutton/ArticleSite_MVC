@@ -93,7 +93,7 @@ namespace ArticleSite._IntegrationTests.Controller_Repository_Data
             var result = _sut.ArticleSummary("Category One") as ViewResult;
             var model = result.Model as List<Article>;
 
-            Assert.AreEqual(3, model.Count);
+            Assert.AreEqual(2, model.Count);
         }
 
         [Test]

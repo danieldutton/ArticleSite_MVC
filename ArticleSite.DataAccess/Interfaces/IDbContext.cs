@@ -1,4 +1,5 @@
-﻿using ArticleSite.Model.Entities;
+﻿using System.Data.Entity.Infrastructure;
+using ArticleSite.Model.Entities;
 using System.Data.Entity;
 
 namespace ArticleSite.DataAccess.Interfaces
@@ -12,5 +13,8 @@ namespace ArticleSite.DataAccess.Interfaces
         int SaveChanges();
 
         void SetModified(object entity);
+
+        DbEntityEntry Entry(object o);
+
     }
 }

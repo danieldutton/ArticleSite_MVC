@@ -1,6 +1,7 @@
 ﻿using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,11 +25,39 @@ namespace ArticleSite.Repository
         }
 
         public void Add(Article entity)
-        {    
+        {   
+            //if we have a list of categories
+            if(entity.Categories != null)
+                //for every category in that list
+                foreach (var category in entity.Categories)
+                {
+                    //see if the category already exists
+                    var cat =
+                        _db.Categories.SingleOrDefault(
+                            c => c.Name.Equals(category.Name, StringComparison.InvariantCultureIgnoreCase));
+                    //if it does already exist
+                    if(cat != null)
+                    {
+                        //then attach it
+                        category.CategoryId = cat.CategoryId;
+                        _db.Categories.Attach(category);
+                    }                       
+                }
 
             _db.Articles.Add(entity);
             _db.SaveChanges();
         }
+
+        //this works
+        //if(entity.Categories != null)
+        //        foreach (var category in entity.Categories)
+        //        {
+        //            if (_db.Categories.Any(c => c.Name.Equals(category.Name, StringComparison.InvariantCultureIgnoreCase)))
+        //            {
+        //                category.CategoryId = 1;
+        //                _db.Categories.Attach(category);
+        //            }                       
+        //        }
 
         public void Update(Article entity)
         {

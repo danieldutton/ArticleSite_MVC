@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration.Conventions;
+﻿using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Model.Entities;
 using System.Data.Entity;
@@ -25,6 +26,11 @@ namespace ArticleSite.DataAccess
             Entry(entity).State = EntityState.Modified;
         }
 
+        public DbEntityEntry Entry(object o)
+        {
+            return base.Entry(o);
+        } 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -33,6 +39,9 @@ namespace ArticleSite.DataAccess
                          .HasMany(j => j.Categories)
                          .WithMany(j => j.Articles)
                          .Map(x => x.ToTable("ArticleCategory"));
+
+            ArticleDbContext db = new ArticleDbContext();
+            
 
             base.OnModelCreating(modelBuilder);
         }

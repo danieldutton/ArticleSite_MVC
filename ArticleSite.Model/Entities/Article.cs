@@ -21,8 +21,6 @@ namespace ArticleSite.Model.Entities
         [MaxLength(4000, ErrorMessage = "Content max 6000 characters")]
         public string Content { get; set; }
 
-        public int CategoryId { get; set; }
-
         public List<Category> Categories { get; set; }
     }
 }

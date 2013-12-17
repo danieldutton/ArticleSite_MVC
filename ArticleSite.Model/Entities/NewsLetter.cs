@@ -10,10 +10,10 @@ namespace ArticleSite.Model.Entities
         [Required]
         public DateTime DatePublished { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "A Subject is required")]
         public string Subject { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Content is required")]
         public string Content { get; set; }
 
         [Required]

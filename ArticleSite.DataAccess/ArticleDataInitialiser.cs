@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using System.Reflection;
-using ArticleSite.Model.Attributes;
-using ArticleSite.Model.Entities;
+﻿using ArticleSite.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,23 +9,6 @@ namespace ArticleSite.DataAccess
     {
         protected override void Seed(ArticleDbContext context)
         {
-            // Fetch all the parent class's public properties
-            var fatherPropertyNames = typeof(DbContext).GetProperties().Select(pi => pi.Name).ToList();
-
-            // Loop each dbset's T
-            foreach (PropertyInfo item in typeof(ArticleDbContext).GetProperties().Where(p => fatherPropertyNames.IndexOf(p.Name) < 0).Select(p => p))
-            {
-                // Fetch the type of "T"
-                Type entityModelType = item.PropertyType.GetGenericArguments()[0];
-                var allfieldNames = from prop in entityModelType.GetProperties()
-                                    where prop.GetCustomAttributes(typeof(UniqueKeyAttribute), true).Count() > 0
-                                    select prop.Name;
-                foreach (string s in allfieldNames)
-                {
-                    context.Database.ExecuteSqlCommand("alter table " + entityModelType.Name + " add unique(" + s + ")");
-                }
-            }
-
             var articles = new List<Article>
                 {
                     new Article { DatePublished = new DateTime(2011, 8, 2), Title = "Article Title 1",  Content = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?", Categories = new List<Category> {new Category {Name = "Category One"}}},

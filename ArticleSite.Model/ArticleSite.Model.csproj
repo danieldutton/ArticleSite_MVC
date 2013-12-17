@@ -35,7 +35,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\UniqueKeyAttribute.cs" />
     <Compile Include="Entities\Article.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\NewsLetter.cs" />

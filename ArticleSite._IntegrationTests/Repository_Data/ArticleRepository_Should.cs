@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.IO;
 using System.Linq;
 
 namespace ArticleSite._IntegrationTests.Repository_Data
@@ -88,19 +87,21 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         [Test]
         public void Add_AddANewArticleToTheDatabaseWithoutDuplicatingAnExistingCategory()
         {
-            var article = new Article
+            var article1 = new Article
                 {
                     DatePublished = DateTime.Now, 
-                    Title = "New Title", 
-                    Content = "New Content", 
-                    Categories = new List<Category> { new Category { CategoryId = 1, Name = "Category One" } }
+                    Title = "Title One", 
+                    Content = "Content One", 
+                    Categories = new List<Category> { new Category { Name = "Category One" } }
                 };
 
-            _sut.Add(article);
+            _sut.Add(article1);
 
             List<Article> result = _sut.ArticlesByCategory("Category One");
+            int categoryCount = _dataContext.Categories.Count();
 
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(10, categoryCount);
         }
 
         [Test]
@@ -166,9 +167,19 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         [Test]
         public void ArticlesByCategory_ReturnArticlesWhereManyPostsHoldTheSameCategory()
         {
+            var article1 = new Article
+            {
+                DatePublished = DateTime.Now,
+                Title = "Title One",
+                Content = "Content One",
+                Categories = new List<Category> { new Category { Name = "Category One" } }
+            };
+
+            _sut.Add(article1);
+            
             List<Article> result = _sut.ArticlesByCategory("Category One");
 
-            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
@@ -192,13 +203,13 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         [TearDown]
         public void TearDown()
         {
-            _dataContext.Dispose();
+            //_dataContext.Dispose();
 
-            if (File.Exists(DbFile))
-            {
-                File.Delete(DbFile);
-            }
-            _sut = null;
+            //if (File.Exists(DbFile))
+            //{
+            //    File.Delete(DbFile);
+            //}
+            //_sut = null;
         }
     }
 }
