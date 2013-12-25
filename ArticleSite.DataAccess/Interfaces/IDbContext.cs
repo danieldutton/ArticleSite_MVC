@@ -1,6 +1,6 @@
-﻿using System.Data.Entity.Infrastructure;
-using ArticleSite.Model.Entities;
+﻿using ArticleSite.Model.Entities;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 
 namespace ArticleSite.DataAccess.Interfaces
 {

@@ -36,7 +36,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         {
             List<Category> result = _sut.All;
 
-            Assert.AreEqual(11, result.Count);
+            Assert.AreEqual(10, result.Count);
         }
 
         [Test]
@@ -61,9 +61,9 @@ namespace ArticleSite._IntegrationTests.Repository_Data
             var category = new Category { Name = "New Category" };
 
             _sut.Add(category);
-            Category newCategory = _sut.Find(12);
+            Category newCategory = _sut.Find(11);
 
-            Assert.AreEqual(12, newCategory.CategoryId);
+            Assert.AreEqual(11, newCategory.CategoryId);
             Assert.AreEqual("New Category", newCategory.Name);
         }
 

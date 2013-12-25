@@ -42,7 +42,7 @@ namespace ArticleSite.Presentation.Controllers
         {
             List<Article> articlesByCategory = ArticleRepository.ArticlesByCategory(searchTerm);
 
-            if (articlesByCategory.Count == 0)
+            if (articlesByCategory == null)
                 return HttpNotFound();
 
             return View(articlesByCategory);

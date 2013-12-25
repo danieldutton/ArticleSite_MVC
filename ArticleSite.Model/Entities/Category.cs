@@ -11,6 +11,8 @@ namespace ArticleSite.Model.Entities
         [MaxLength(70, ErrorMessage = "Category max 70 characters")]
         public string Name { get; set; }
 
+        public int ArticleId { get; set; }
+
         public List<Article> Articles { get; set; }
     }
 }

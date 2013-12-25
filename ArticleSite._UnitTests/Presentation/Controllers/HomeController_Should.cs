@@ -123,6 +123,7 @@ namespace ArticleSite._UnitTests.Presentation.Controllers
         public void ArticleSummary_CallArticleRepository_ArticlesByCategory_ExactlyOnce()
         {
             var fakeArticleRepository = new Mock<IArticleRepository>();
+            fakeArticleRepository.Setup(x => x.ArticlesByCategory(It.IsAny<string>())).Returns(()=> new List<Article>());
             var homeController = new HomeController(fakeArticleRepository.Object);
 
             homeController.ArticleSummary(It.IsAny<string>());

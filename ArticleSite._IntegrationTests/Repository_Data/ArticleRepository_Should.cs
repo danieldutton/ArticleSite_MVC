@@ -98,10 +98,10 @@ namespace ArticleSite._IntegrationTests.Repository_Data
             _sut.Add(article1);
 
             List<Article> result = _sut.ArticlesByCategory("Category One");
-            int categoryCount = _dataContext.Categories.Count();
+            int categoryCount = _dataContext.Categories.Count(x => x.Name == "Category One");
 
             Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(10, categoryCount);
+            Assert.AreEqual(1, categoryCount);
         }
 
         [Test]

@@ -31,6 +31,7 @@ namespace ArticleSite.Repository
                 //for every category in that list
                 foreach (var category in entity.Categories)
                 {
+                    Category copy = category;
                     //see if the category already exists
                     var cat =
                         _db.Categories.SingleOrDefault(
@@ -39,8 +40,7 @@ namespace ArticleSite.Repository
                     if(cat != null)
                     {
                         //then attach it
-                        category.CategoryId = cat.CategoryId;
-                        _db.Categories.Attach(category);
+                        copy = cat;
                     }                       
                 }
 
