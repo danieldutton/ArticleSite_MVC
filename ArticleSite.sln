@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleSite._IntegrationTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleSite.Services", "ArticleSite.Services\ArticleSite.Services.csproj", "{589D8B50-2536-41F6-A9D8-4725569FCADF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{122CC24A-7D5B-4207-9B9E-C1750D91047A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,5 +54,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7EA8EC3-8D8B-4BFF-B70F-BA932739E603} = {122CC24A-7D5B-4207-9B9E-C1750D91047A}
+		{089C753E-A261-4335-AB07-36770C2F2AE3} = {122CC24A-7D5B-4207-9B9E-C1750D91047A}
 	EndGlobalSection
 EndGlobal

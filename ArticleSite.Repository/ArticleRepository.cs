@@ -1,4 +1,5 @@
-﻿using ArticleSite.DataAccess.Interfaces;
+﻿using System.Data.Entity;
+using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System;
@@ -9,12 +10,12 @@ namespace ArticleSite.Repository
 {
     public class ArticleRepository : IArticleRepository
     {
-        private readonly IDbContext _db;
+        private readonly ArticleDbContext _db;
 
         public List<Article> All { get { return _db.Articles.ToList(); } }
 
 
-        public ArticleRepository(IDbContext dbContext)
+        public ArticleRepository(ArticleDbContext dbContext)
         {
             _db = dbContext;
         }
@@ -61,13 +62,14 @@ namespace ArticleSite.Repository
 
         public void Update(Article entity)
         {
-            _db.SetModified(entity);
+            _db.Entry(entity).State = EntityState.Modified;
             _db.SaveChanges();
         }
 
         public void Delete(Article entity)
         {
-            var post = All.SingleOrDefault(a => a.ArticleId == entity.ArticleId);
+            var post = All.
+                SingleOrDefault(a => a.ArticleId == entity.ArticleId);
             
             if (post != null)
             {
@@ -79,17 +81,26 @@ namespace ArticleSite.Repository
 
         public Article LatestArticle()
         {
-            return All.OrderByDescending(a => a.DatePublished).FirstOrDefault();
+            return All.
+                OrderByDescending(a => a.DatePublished)
+                .FirstOrDefault();
         }
 
         public List<Article> LatestArticles(int count)
         {
-            return All.OrderByDescending(a => a.DatePublished).Take(count).ToList();
+            return All.
+                OrderByDescending(a => a.DatePublished)
+                .Take(count)
+                .ToList();
         }
 
         public List<Article> ArticlesByCategory(string category)
         {
-            List<Article> articlesByCategory = _db.Articles.Where(a => a.Categories.Any(c => c.Name.Contains(category))).ToList();
+            List<Article> articlesByCategory = _db.Articles
+                .Where(a => a.Categories
+                    .Any(c => c.Name
+                        .Contains(category)))
+                        .ToList();
 
             return articlesByCategory;
         }

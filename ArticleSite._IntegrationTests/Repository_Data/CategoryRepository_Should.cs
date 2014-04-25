@@ -4,7 +4,6 @@ using ArticleSite.Repository;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.IO;
 using System.Linq;
 
@@ -22,8 +21,7 @@ namespace ArticleSite._IntegrationTests.Repository_Data
         [SetUp]
         public void InitTest()
         {
-            Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0", "",
-                    string.Format("Data Source=\"{0}\";", DbFile));
+            
             Database.SetInitializer(new ArticleDataInitialiser());
 
             _dataContext = new ArticleDbContext();

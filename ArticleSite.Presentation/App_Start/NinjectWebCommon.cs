@@ -1,7 +1,9 @@
+using System.Configuration;
 using ArticleSite.DataAccess;
-using ArticleSite.DataAccess.Interfaces;
 using ArticleSite.Repository;
 using ArticleSite.Repository.Interfaces;
+using ArticleSite.Services.Email;
+using ArticleSite.Services.Interfaces;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(ArticleSite.Presentation.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(ArticleSite.Presentation.App_Start.NinjectWebCommon), "Stop")]
@@ -58,13 +60,23 @@ namespace ArticleSite.Presentation.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IDbContext>().To<ArticleDbContext>();
+            kernel.Bind<ArticleDbContext>().To<ArticleDbContext>();
 
             //Articles
             kernel.Bind<IArticleRepository>().To<ArticleRepository>();
             
             //Categories
             kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
+
+            //Email
+            string smtpServer = ConfigurationManager.AppSettings["Smtp_Server"];
+            string targetEmail = ConfigurationManager.AppSettings["Smtp_TargetEmail"];
+
+            var emailSettings = new EmailSettings(smtpServer, targetEmail);
+
+            kernel.Bind<IEmailer>()
+                          .To<Emailer>()
+                          .WithConstructorArgument("emailSettings", emailSettings);
         }        
     }
 }

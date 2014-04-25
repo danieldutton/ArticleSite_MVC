@@ -12,3 +12,17 @@ C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\bin\Debu
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.csprojResolveAssemblyReference.cache
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.dll
 C:\Users\Danny\Documents\GitHub\Article_Site_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.pdb
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Repository.dll.config
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Repository.dll
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Repository.pdb
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.DataAccess.dll
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Model.dll
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\EntityFramework.dll
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.DataAccess.pdb
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Model.pdb
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\EntityFramework.xml
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.dll
+C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.pdb

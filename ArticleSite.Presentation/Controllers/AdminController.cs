@@ -26,10 +26,10 @@ namespace ArticleSite.Presentation.Controllers
         public ActionResult Details(int id = 0)
         {
             Article article = ArticleRepository.Find(id);
+            
             if (article == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(article);
         }
 
@@ -55,10 +55,10 @@ namespace ArticleSite.Presentation.Controllers
         public ActionResult Edit(int id = 0)
         {
             Article article = ArticleRepository.Find(id);
+            
             if (article == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(article);
         }
 
@@ -77,10 +77,10 @@ namespace ArticleSite.Presentation.Controllers
         public ActionResult Delete(int id = 0)
         {
             Article article = ArticleRepository.Find(id);
+            
             if (article == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(article);
         }
 

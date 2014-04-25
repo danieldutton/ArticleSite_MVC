@@ -1,12 +1,10 @@
-﻿using System.Data.Entity.Infrastructure;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using ArticleSite.DataAccess.Interfaces;
-using ArticleSite.Model.Entities;
+﻿using ArticleSite.Model.Entities;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace ArticleSite.DataAccess
 {
-    public class ArticleDbContext : DbContext, IDbContext
+    public class ArticleDbContext : DbContext
     {
         public virtual IDbSet<Article> Articles { get; set; }
 
@@ -21,16 +19,6 @@ namespace ArticleSite.DataAccess
         {           
         }
 
-        public void SetModified(object entity)
-        {
-            Entry(entity).State = EntityState.Modified;
-        }
-
-        public DbEntityEntry Entry(object o)
-        {
-            return base.Entry(o);
-        } 
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -39,9 +27,6 @@ namespace ArticleSite.DataAccess
                          .HasMany(j => j.Categories)
                          .WithMany(j => j.Articles)
                          .Map(x => x.ToTable("ArticleCategory"));
-
-            ArticleDbContext db = new ArticleDbContext();
-            
 
             base.OnModelCreating(modelBuilder);
         }

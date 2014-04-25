@@ -12,7 +12,6 @@ namespace ArticleSite.Model.Entities
 
         public bool IsSubscribed { get; set; }
 
-
         public Subscriber()
         {
             IsSubscribed = true;

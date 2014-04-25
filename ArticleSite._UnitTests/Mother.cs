@@ -11,7 +11,9 @@ namespace ArticleSite._UnitTests
         {
             var validationResults = new List<ValidationResult>();
             var ctx = new ValidationContext(model, null, null);
+            
             Validator.TryValidateObject(model, ctx, validationResults, true);
+            
             return validationResults;
         }
 
@@ -19,7 +21,9 @@ namespace ArticleSite._UnitTests
         {
             var validationContext = new ValidationContext(viewModelToValidate, null, null);
             var validationResults = new List<ValidationResult>();
+            
             Validator.TryValidateObject(viewModelToValidate, validationContext, validationResults, true);
+            
             foreach (var validationResult in validationResults)
             {
                 controller.ModelState.AddModelError(validationResult.MemberNames.First(), validationResult.ErrorMessage);

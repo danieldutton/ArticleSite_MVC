@@ -1,13 +1,20 @@
-﻿using System.Linq;
+﻿using System;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
+using ArticleSite.Services;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using ArticleSite.Services.Interfaces;
+using Ninject;
 
 namespace ArticleSite.Presentation.Controllers
 {
     public class HomeController : ApplicationController
     {
+        [Inject]
+        public IEmailer MessagingService { get; set; }
+
         public HomeController(IArticleRepository articleRepository) 
             : base(articleRepository)
         {
@@ -61,6 +68,37 @@ namespace ArticleSite.Presentation.Controllers
         public ActionResult Contact()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Contact(Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    MessagingService.Contact = contact;
+                    MessagingService.Message();
+
+                    return RedirectToRoute("ContactConfirmed");
+                }
+                catch (Exception)
+                {
+                    return RedirectToRoute("ContactFailed");
+                }
+            }
+            return View("ContactFailed");
+        }
+
+        public ActionResult ContactConfirmed()
+        {
+            return View("ContactConfirmed");
+        }
+
+        public ActionResult ContactFailed()
+        {
+            return View("ContactFailed");
         }
     }
 }

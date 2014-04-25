@@ -355,6 +355,8 @@
     <Content Include="Views\Home\ArticleSummary.cshtml" />
     <Content Include="Views\Shared\_ContactForm.cshtml" />
     <Content Include="Views\Admin\CreateNewsletter.cshtml" />
+    <Content Include="Views\Home\ContactConfirmed.cshtml" />
+    <Content Include="Views\Home\ContactFailed.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -372,6 +374,10 @@
     <ProjectReference Include="..\ArticleSite.Repository\ArticleSite.Repository.csproj">
       <Project>{018BB750-0550-4C35-B6D1-BE8E31201098}</Project>
       <Name>ArticleSite.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArticleSite.Services\ArticleSite.Services.csproj">
+      <Project>{589D8B50-2536-41F6-A9D8-4725569FCADF}</Project>
+      <Name>ArticleSite.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

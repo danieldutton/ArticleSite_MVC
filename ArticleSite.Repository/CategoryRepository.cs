@@ -1,4 +1,5 @@
-﻿using ArticleSite.DataAccess.Interfaces;
+﻿using System.Data.Entity;
+using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System;
@@ -9,12 +10,14 @@ namespace ArticleSite.Repository
 {
     public class CategoryRepository : ICategoryRepository
     {
-        private readonly IDbContext _db;
+        private readonly ArticleDbContext _db;
 
-        public List<Category> All { get { return _db.Categories.ToList(); } }
+        public List<Category> All
+        {
+            get { return _db.Categories.ToList(); }
+        }
 
-
-        public CategoryRepository(IDbContext dbContext)
+        public CategoryRepository(ArticleDbContext dbContext)
         {
             _db = dbContext;
         }
@@ -26,7 +29,10 @@ namespace ArticleSite.Repository
 
         public void Add(Category entity)
         {
-            var category = _db.Categories.FirstOrDefault(c => c.Name.Equals(entity.Name, StringComparison.InvariantCultureIgnoreCase));
+            Category category = _db.Categories
+                .FirstOrDefault(c => c.Name
+                    .Equals(entity.Name, StringComparison.InvariantCultureIgnoreCase));
+
             if (category != null) return;
 
             _db.Categories.Add(entity);
@@ -35,23 +41,27 @@ namespace ArticleSite.Repository
 
         public void Update(Category entity)
         {
-            var category = _db.Categories.FirstOrDefault(c => c.Name.Equals(entity.Name, StringComparison.InvariantCultureIgnoreCase));
+            Category category = _db.Categories
+                .FirstOrDefault(c => c.Name
+                    .Equals(entity.Name, StringComparison.InvariantCultureIgnoreCase));
+
             if (category != null) return;
 
-            _db.SetModified(entity);
+            _db.Entry(entity).State = EntityState.Modified;
             _db.SaveChanges();
         }
 
         public void Delete(Category entity)
         {
-            var category = All.SingleOrDefault(c => c.CategoryId == entity.CategoryId);
-            
+            Category category = All.
+                SingleOrDefault(c => c.CategoryId == entity.CategoryId);
+
             if (category != null)
             {
                 _db.Categories.Remove(category);
 
-                _db.SaveChanges();    
-            }           
+                _db.SaveChanges();
+            }
         }
 
         public List<Category> CategoriesByNameAscending(int count)
@@ -61,9 +71,9 @@ namespace ArticleSite.Repository
             if (count > categoryNos) count = 5;
 
             List<Category> categories = All
-                                        .OrderBy(c => c.Name)
-                                        .Take(count)
-                                        .ToList();
+                .OrderBy(c => c.Name)
+                .Take(count)
+                .ToList();
 
             return categories;
         }
