@@ -1,9 +1,9 @@
-﻿using System.Data.Entity;
-using ArticleSite.DataAccess;
+﻿using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace ArticleSite.Repository

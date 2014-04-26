@@ -6,13 +6,13 @@ namespace ArticleSite.DataAccess
 {
     public class ArticleDbContext : DbContext
     {
-        public virtual IDbSet<Article> Articles { get; set; }
+        public virtual DbSet<Article> Articles { get; set; }
 
-        public virtual IDbSet<Category> Categories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
-        public virtual IDbSet<Subscriber> Subscribers { get; set; }
+        public virtual DbSet<Subscriber> Subscribers { get; set; }
 
-        public virtual IDbSet<NewsLetter> NewsLetters { get; set; }
+        public virtual DbSet<NewsLetter> NewsLetters { get; set; }
 
 
         public ArticleDbContext() : base("ArticleDb")

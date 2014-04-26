@@ -26,3 +26,17 @@ C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\E
 C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.csprojResolveAssemblyReference.cache
 C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.dll
 C:\Users\Dan\Documents\GitHub\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.pdb
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Repository.dll.config
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Repository.dll
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Repository.pdb
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.DataAccess.dll
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Model.dll
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\EntityFramework.dll
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\EntityFramework.SqlServer.dll
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.DataAccess.pdb
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\ArticleSite.Model.pdb
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\EntityFramework.xml
+G:\ArticleSite_MVC\ArticleSite.Repository\bin\Debug\EntityFramework.SqlServer.xml
+G:\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.csprojResolveAssemblyReference.cache
+G:\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.dll
+G:\ArticleSite_MVC\ArticleSite.Repository\obj\Debug\ArticleSite.Repository.pdb

@@ -7,6 +7,7 @@ namespace ArticleSite.Model.Entities
         public int Id { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email is required")]
+        [MaxLength(254, ErrorMessage = "Max of 254 characters")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Invalid e-mail format")]
         public string Email { get; set; }
 

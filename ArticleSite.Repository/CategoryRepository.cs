@@ -1,9 +1,9 @@
-﻿using System.Data.Entity;
-using ArticleSite.DataAccess;
+﻿using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace ArticleSite.Repository
@@ -59,7 +59,6 @@ namespace ArticleSite.Repository
             if (category != null)
             {
                 _db.Categories.Remove(category);
-
                 _db.SaveChanges();
             }
         }
