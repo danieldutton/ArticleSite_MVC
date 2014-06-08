@@ -5,8 +5,8 @@ using ArticleSite.Repository.Interfaces;
 using ArticleSite.Services.Email;
 using ArticleSite.Services.Interfaces;
 
-[assembly: WebActivator.PreApplicationStartMethod(typeof(ArticleSite.Presentation.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(ArticleSite.Presentation.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ArticleSite.Presentation.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(ArticleSite.Presentation.App_Start.NinjectWebCommon), "Stop")]
 
 namespace ArticleSite.Presentation.App_Start
 {
@@ -47,11 +47,19 @@ namespace ArticleSite.Presentation.App_Start
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
-            kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
-            kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-            
-            RegisterServices(kernel);
-            return kernel;
+            try
+            {
+                kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
+                kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+
+                RegisterServices(kernel);
+                return kernel;
+            }
+            catch
+            {
+                kernel.Dispose();
+                throw;
+            }
         }
 
         /// <summary>
@@ -64,7 +72,7 @@ namespace ArticleSite.Presentation.App_Start
 
             //Articles
             kernel.Bind<IArticleRepository>().To<ArticleRepository>();
-            
+
             //Categories
             kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
 

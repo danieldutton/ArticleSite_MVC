@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ArticleSite.UnitTests.Services
 {
-    class Contact_Should
+    public class Contact_Should
     {
         private const string NameValue = "Name";
 

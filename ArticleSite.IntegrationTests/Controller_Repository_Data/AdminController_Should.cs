@@ -1,4 +1,5 @@
-﻿using ArticleSite.DataAccess;
+﻿using System.Web.Mvc;
+using ArticleSite.DataAccess;
 using ArticleSite.Model.Entities;
 using ArticleSite.Presentation.Controllers;
 using ArticleSite.Repository;
@@ -8,7 +9,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.IO;
-using System.Web.Mvc;
 
 namespace ArticleSite.IntegrationTests.Controller_Repository_Data
 {
